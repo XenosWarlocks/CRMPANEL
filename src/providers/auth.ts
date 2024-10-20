@@ -1,6 +1,6 @@
 import type { AuthProvider } from "@refinedev/core";
 
-// import type { User } from "@/graphql/schema.types";
+import type { User } from "@/graphql/schema.types";
 
 import { API_URL, dataProvider } from "./data";
 
@@ -63,5 +63,40 @@ export const authProvider: AuthProvider = {
         return { error };
     },
 
-    check: async() => {}
+    check: async() => {
+        try {
+            await dataProvider.custom({
+                url: API_URL,
+                method: "post",
+                headers: {},
+                meta: {
+                    rawQuery: `query Me { me { name }}`,
+                }
+            });
+            return { authenticated: true, redirectTo: "/" };
+        } catch (error) {
+            return { authenticated: false, redirectTo: "/login" };
+        }
+    },
+
+    getIdentity: async () => {
+        const accessToken = localStorage.getItem("access_token");
+
+        try {
+            const { data } = await dataProvider.custom<{ me: User }>({
+                url: API_URL,
+                method: "post",
+                headers: accessToken
+                    ? {
+                        Authorization: `Bearer ${accessToken}`,
+                    } : {},
+                meta: {
+                    rawQuery: `query Me { me { id, name, email, phone, jobTitle, timezone, avatarUrl }}}`,
+                },
+            });
+            return data.me;
+        } catch (error) {
+            return undefined;
+        }
+    }
 }
