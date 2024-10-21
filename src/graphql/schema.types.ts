@@ -42,3 +42,39 @@ export type AuditConnection = {
     /** Fetch total count of records */
     totalCount: Scalars["Int"]["output"];
 };
+
+export type AuditDeleteResponse = {
+    action?: Maybe<Scalars["String"]["output"]>;
+    changes?: Maybe<Array<AuditChange>>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    targetEntity?: Maybe<Scalars["String"]["output"]>;
+    targetId?: Maybe<Scalars["Float"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type AuditFilter = {
+    action?: InputMaybe<StringFieldComparison>;
+    and?: InputMaybe<Array<AuditFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<AuditFilter>>;
+    targetEntity?: InputMaybe<StringFieldComparison>;
+    targetId?: InputMaybe<NumberFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    user?: InputMaybe<AuditFilterUserFilter>;
+};
+
+export type AuditFilterUserFilter = {
+    and?: InputMaybe<Array<AuditFilterUserFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<AuditFilterUserFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
