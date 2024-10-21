@@ -327,3 +327,131 @@ export type CompanyContactsMaxAggregate = {
     timezone?: Maybe<Scalars["String"]["output"]>;
     updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
 };
+
+export type CompanyContactsMinAggregate = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    email?: Maybe<Scalars["String"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    jobTitle?: Maybe<Scalars["String"]["output"]>;
+    name?: Maybe<Scalars["String"]["output"]>;
+    phone?: Maybe<Scalars["String"]["output"]>;
+    score?: Maybe<Scalars["Int"]["output"]>;
+    stage?: Maybe<ContactStage>;
+    status?: Maybe<ContactStatus>;
+    timezone?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type CompanyContactsSumAggregate = {
+    id?: Maybe<Scalars["Float"]["output"]>;
+    score?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type CompanyCountAggregate = {
+    businessType?: Maybe<Scalars["Int"]["output"]>;
+    companySize?: Maybe<Scalars["Int"]["output"]>;
+    country?: Maybe<Scalars["Int"]["output"]>;
+    createdAt?: Maybe<Scalars["Int"]["output"]>;
+    id?: Maybe<Scalars["Int"]["output"]>;
+    industry?: Maybe<Scalars["Int"]["output"]>;
+    name?: Maybe<Scalars["Int"]["output"]>;
+    totalRevenue?: Maybe<Scalars["Int"]["output"]>;
+    updatedAt?: Maybe<Scalars["Int"]["output"]>;
+    website?: Maybe<Scalars["Int"]["output"]>;
+};
+  
+export type CompanyCreateInput = {
+    businessType?: InputMaybe<BusinessType>;
+    companySize?: InputMaybe<CompanySize>;
+    country?: InputMaybe<Scalars["String"]["input"]>;
+    industry?: InputMaybe<Industry>;
+    name: Scalars["String"]["input"];
+    salesOwnerId: Scalars["ID"]["input"];
+    totalRevenue?: InputMaybe<Scalars["Int"]["input"]>;
+    website?: InputMaybe<Scalars["String"]["input"]>;
+};
+  
+export type CompanyDealsAggregateGroupBy = {
+    closeDateDay?: Maybe<Scalars["Int"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Int"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Int"]["output"]>;
+    companyId?: Maybe<Scalars["ID"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["ID"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type CompanyDealsAggregateResponse = {
+    avg?: Maybe<CompanyDealsAvgAggregate>;
+    count?: Maybe<CompanyDealsCountAggregate>;
+    groupBy?: Maybe<CompanyDealsAggregateGroupBy>;
+    max?: Maybe<CompanyDealsMaxAggregate>;
+    min?: Maybe<CompanyDealsMinAggregate>;
+    sum?: Maybe<CompanyDealsSumAggregate>;
+};
+  
+export type CompanyDealsAvgAggregate = {
+    closeDateDay?: Maybe<Scalars["Float"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Float"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Float"]["output"]>;
+    companyId?: Maybe<Scalars["Float"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["Float"]["output"]>;
+    id?: Maybe<Scalars["Float"]["output"]>;
+    stageId?: Maybe<Scalars["Float"]["output"]>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
+
+export type CompanyDealsConnection = {
+    /** Array of nodes. */
+    nodes: Array<Deal>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type CompanyDealsCountAggregate = {
+    closeDateDay?: Maybe<Scalars["Int"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Int"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Int"]["output"]>;
+    companyId?: Maybe<Scalars["Int"]["output"]>;
+    createdAt?: Maybe<Scalars["Int"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["Int"]["output"]>;
+    id?: Maybe<Scalars["Int"]["output"]>;
+    stageId?: Maybe<Scalars["Int"]["output"]>;
+    title?: Maybe<Scalars["Int"]["output"]>;
+    updatedAt?: Maybe<Scalars["Int"]["output"]>;
+    value?: Maybe<Scalars["Int"]["output"]>;
+};
+  
+export type CompanyDealsMaxAggregate = {
+    closeDateDay?: Maybe<Scalars["Int"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Int"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Int"]["output"]>;
+    companyId?: Maybe<Scalars["ID"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["ID"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type CompanyDealsMinAggregate = {
+    closeDateDay?: Maybe<Scalars["Int"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Int"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Int"]["output"]>;
+    companyId?: Maybe<Scalars["ID"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["ID"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
