@@ -93,7 +93,7 @@ export type AuditSortFields =
   | "targetId"
   | "updatedAt";
 
-  export type AuditSubscriptionFilter = {
+export type AuditSubscriptionFilter = {
     action?: InputMaybe<StringFieldComparison>;
     and?: InputMaybe<Array<AuditSubscriptionFilter>>;
     createdAt?: InputMaybe<DateFieldComparison>;
@@ -102,4 +102,51 @@ export type AuditSortFields =
     targetEntity?: InputMaybe<StringFieldComparison>;
     targetId?: InputMaybe<NumberFieldComparison>;
     updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type AuthResponse = {
+    accessToken: Scalars["String"]["output"];
+    refreshToken: Scalars["String"]["output"];
+    user: User;
+};
+  
+export type BooleanFieldComparison = {
+    is?: InputMaybe<Scalars["Boolean"]["input"]>;
+    isNot?: InputMaybe<Scalars["Boolean"]["input"]>;
+};
+  
+/** Business type */
+  export type BusinessType = "B2B" | "B2C" | "B2G";
+  
+export type CheckListItem = {
+    checked: Scalars["Boolean"]["output"];
+    title: Scalars["String"]["output"];
+};
+  
+export type ChecklistItemInput = {
+    checked: Scalars["Boolean"]["input"];
+    title: Scalars["String"]["input"];
+};
+
+export type Company = {
+    avatarUrl?: Maybe<Scalars["String"]["output"]>;
+    businessType?: Maybe<BusinessType>;
+    companySize?: Maybe<CompanySize>;
+    contacts: CompanyContactsConnection;
+    contactsAggregate: Array<CompanyContactsAggregateResponse>;
+    country?: Maybe<Scalars["String"]["output"]>;
+    createdAt: Scalars["DateTime"]["output"];
+    createdBy: User;
+    deals: CompanyDealsConnection;
+    dealsAggregate: Array<CompanyDealsAggregateResponse>;
+    id: Scalars["ID"]["output"];
+    industry?: Maybe<Industry>;
+    name: Scalars["String"]["output"];
+    notes: CompanyNotesConnection;
+    notesAggregate: Array<CompanyNotesAggregateResponse>;
+    salesOwner: User;
+    totalRevenue?: Maybe<Scalars["Int"]["output"]>;
+    updatedAt: Scalars["DateTime"]["output"];
+    updatedBy?: Maybe<User>;
+    website?: Maybe<Scalars["String"]["output"]>;
 };
