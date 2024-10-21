@@ -78,3 +78,28 @@ export type AuditFilterUserFilter = {
     timezone?: InputMaybe<StringFieldComparison>;
     updatedAt?: InputMaybe<DateFieldComparison>;
 };
+
+export type AuditSort = {
+    direction: SortDirection;
+    field: AuditSortFields;
+    nulls?: InputMaybe<SortNulls>;
+};
+
+export type AuditSortFields =
+  | "action"
+  | "createdAt"
+  | "id"
+  | "targetEntity"
+  | "targetId"
+  | "updatedAt";
+
+  export type AuditSubscriptionFilter = {
+    action?: InputMaybe<StringFieldComparison>;
+    and?: InputMaybe<Array<AuditSubscriptionFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<AuditSubscriptionFilter>>;
+    targetEntity?: InputMaybe<StringFieldComparison>;
+    targetId?: InputMaybe<NumberFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
