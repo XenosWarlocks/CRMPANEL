@@ -262,3 +262,68 @@ export type CompanyConnection = {
     /** Fetch total count of records */
     totalCount: Scalars["Int"]["output"];
 };
+
+export type CompanyContactsAggregateGroupBy = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    email?: Maybe<Scalars["String"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    jobTitle?: Maybe<Scalars["String"]["output"]>;
+    name?: Maybe<Scalars["String"]["output"]>;
+    phone?: Maybe<Scalars["String"]["output"]>;
+    score?: Maybe<Scalars["Int"]["output"]>;
+    stage?: Maybe<ContactStage>;
+    status?: Maybe<ContactStatus>;
+    timezone?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type CompanyContactsAggregateResponse = {
+    avg?: Maybe<CompanyContactsAvgAggregate>;
+    count?: Maybe<CompanyContactsCountAggregate>;
+    groupBy?: Maybe<CompanyContactsAggregateGroupBy>;
+    max?: Maybe<CompanyContactsMaxAggregate>;
+    min?: Maybe<CompanyContactsMinAggregate>;
+    sum?: Maybe<CompanyContactsSumAggregate>;
+};
+  
+export type CompanyContactsAvgAggregate = {
+    id?: Maybe<Scalars["Float"]["output"]>;
+    score?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type CompanyContactsConnection = {
+    /** Array of nodes. */
+    nodes: Array<Contact>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+
+export type CompanyContactsCountAggregate = {
+    createdAt?: Maybe<Scalars["Int"]["output"]>;
+    email?: Maybe<Scalars["Int"]["output"]>;
+    id?: Maybe<Scalars["Int"]["output"]>;
+    jobTitle?: Maybe<Scalars["Int"]["output"]>;
+    name?: Maybe<Scalars["Int"]["output"]>;
+    phone?: Maybe<Scalars["Int"]["output"]>;
+    score?: Maybe<Scalars["Int"]["output"]>;
+    stage?: Maybe<Scalars["Int"]["output"]>;
+    status?: Maybe<Scalars["Int"]["output"]>;
+    timezone?: Maybe<Scalars["Int"]["output"]>;
+    updatedAt?: Maybe<Scalars["Int"]["output"]>;
+};
+  
+export type CompanyContactsMaxAggregate = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    email?: Maybe<Scalars["String"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    jobTitle?: Maybe<Scalars["String"]["output"]>;
+    name?: Maybe<Scalars["String"]["output"]>;
+    phone?: Maybe<Scalars["String"]["output"]>;
+    score?: Maybe<Scalars["Int"]["output"]>;
+    stage?: Maybe<ContactStage>;
+    status?: Maybe<ContactStatus>;
+    timezone?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
