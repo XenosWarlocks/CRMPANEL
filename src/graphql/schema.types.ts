@@ -455,3 +455,29 @@ export type CompanyDealsMinAggregate = {
     updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
     value?: Maybe<Scalars["Float"]["output"]>;
 };
+
+export type CompanyDealsSumAggregate = {
+    closeDateDay?: Maybe<Scalars["Float"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Float"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Float"]["output"]>;
+    companyId?: Maybe<Scalars["Float"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["Float"]["output"]>;
+    id?: Maybe<Scalars["Float"]["output"]>;
+    stageId?: Maybe<Scalars["Float"]["output"]>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type CompanyDeleteFilter = {
+    and?: InputMaybe<Array<CompanyDeleteFilter>>;
+    businessType?: InputMaybe<CompanyBusinessTypeFilterComparison>;
+    companySize?: InputMaybe<CompanyCompanySizeFilterComparison>;
+    country?: InputMaybe<StringFieldComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    industry?: InputMaybe<CompanyIndustryFilterComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<CompanyDeleteFilter>>;
+    totalRevenue?: InputMaybe<IntFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    website?: InputMaybe<StringFieldComparison>;
+};
