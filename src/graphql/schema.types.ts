@@ -516,3 +516,64 @@ export type CompanyFilter = {
     updatedBy?: InputMaybe<CompanyFilterUserFilter>;
     website?: InputMaybe<StringFieldComparison>;
 };
+
+export type CompanyFilterCompanyNoteFilter = {
+    and?: InputMaybe<Array<CompanyFilterCompanyNoteFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<CompanyFilterCompanyNoteFilter>>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type CompanyFilterContactFilter = {
+    and?: InputMaybe<Array<CompanyFilterContactFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<CompanyFilterContactFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    score?: InputMaybe<IntFieldComparison>;
+    stage?: InputMaybe<ContactStageFilterComparison>;
+    status?: InputMaybe<ContactStatusFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type CompanyFilterDealFilter = {
+    and?: InputMaybe<Array<CompanyFilterDealFilter>>;
+    closeDateDay?: InputMaybe<IntFieldComparison>;
+    closeDateMonth?: InputMaybe<IntFieldComparison>;
+    closeDateYear?: InputMaybe<IntFieldComparison>;
+    companyId?: InputMaybe<IdFilterComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    dealOwnerId?: InputMaybe<IdFilterComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<CompanyFilterDealFilter>>;
+    stageId?: InputMaybe<IdFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    value?: InputMaybe<FloatFieldComparison>;
+};
+
+export type CompanyFilterUserFilter = {
+    and?: InputMaybe<Array<CompanyFilterUserFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<CompanyFilterUserFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type CompanyIndustryFilterComparison = {
+    eq?: InputMaybe<Industry>;
+    in?: InputMaybe<Array<Industry>>;
+    neq?: InputMaybe<Industry>;
+    notIn?: InputMaybe<Array<Industry>>;
+};
