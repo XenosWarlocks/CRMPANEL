@@ -577,3 +577,283 @@ export type CompanyIndustryFilterComparison = {
     neq?: InputMaybe<Industry>;
     notIn?: InputMaybe<Array<Industry>>;
 };
+
+export type CompanyMaxAggregate = {
+    businessType?: Maybe<BusinessType>;
+    companySize?: Maybe<CompanySize>;
+    country?: Maybe<Scalars["String"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    industry?: Maybe<Industry>;
+    name?: Maybe<Scalars["String"]["output"]>;
+    totalRevenue?: Maybe<Scalars["Int"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+    website?: Maybe<Scalars["String"]["output"]>;
+};
+  
+export type CompanyMinAggregate = {
+    businessType?: Maybe<BusinessType>;
+    companySize?: Maybe<CompanySize>;
+    country?: Maybe<Scalars["String"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    industry?: Maybe<Industry>;
+    name?: Maybe<Scalars["String"]["output"]>;
+    totalRevenue?: Maybe<Scalars["Int"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+    website?: Maybe<Scalars["String"]["output"]>;
+};
+
+export type CompanyNote = {
+    company: Company;
+    createdAt: Scalars["DateTime"]["output"];
+    createdBy: User;
+    id: Scalars["ID"]["output"];
+    note: Scalars["String"]["output"];
+    updatedAt: Scalars["DateTime"]["output"];
+    updatedBy?: Maybe<User>;
+};
+  
+export type CompanyNoteAggregateFilter = {
+    and?: InputMaybe<Array<CompanyNoteAggregateFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<CompanyNoteAggregateFilter>>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type CompanyNoteConnection = {
+    /** Array of nodes. */
+    nodes: Array<CompanyNote>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+
+export type CompanyNoteCreateInput = {
+    companyId: Scalars["ID"]["input"];
+    note: Scalars["String"]["input"];
+};
+  
+export type CompanyNoteDeleteFilter = {
+    and?: InputMaybe<Array<CompanyNoteDeleteFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<CompanyNoteDeleteFilter>>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type CompanyNoteDeleteResponse = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    note?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+
+export type CompanyNoteFilter = {
+    and?: InputMaybe<Array<CompanyNoteFilter>>;
+    company?: InputMaybe<CompanyNoteFilterCompanyFilter>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    createdBy?: InputMaybe<CompanyNoteFilterUserFilter>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<CompanyNoteFilter>>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    updatedBy?: InputMaybe<CompanyNoteFilterUserFilter>;
+};
+  
+export type CompanyNoteFilterCompanyFilter = {
+    and?: InputMaybe<Array<CompanyNoteFilterCompanyFilter>>;
+    businessType?: InputMaybe<CompanyBusinessTypeFilterComparison>;
+    companySize?: InputMaybe<CompanyCompanySizeFilterComparison>;
+    country?: InputMaybe<StringFieldComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    industry?: InputMaybe<CompanyIndustryFilterComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<CompanyNoteFilterCompanyFilter>>;
+    totalRevenue?: InputMaybe<IntFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    website?: InputMaybe<StringFieldComparison>;
+};
+
+export type CompanyNoteFilterUserFilter = {
+    and?: InputMaybe<Array<CompanyNoteFilterUserFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<CompanyNoteFilterUserFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type CompanyNoteSort = {
+    direction: SortDirection;
+    field: CompanyNoteSortFields;
+    nulls?: InputMaybe<SortNulls>;
+};
+  
+export type CompanyNoteSortFields = "createdAt" | "id" | "updatedAt";
+
+export type CompanyNoteSubscriptionFilter = {
+    and?: InputMaybe<Array<CompanyNoteSubscriptionFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<CompanyNoteSubscriptionFilter>>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type CompanyNoteUpdateFilter = {
+    and?: InputMaybe<Array<CompanyNoteUpdateFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<CompanyNoteUpdateFilter>>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type CompanyNoteUpdateInput = {
+    note: Scalars["String"]["input"];
+};
+  
+export type CompanyNotesAggregateGroupBy = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+
+export type CompanyNotesAggregateResponse = {
+    avg?: Maybe<CompanyNotesAvgAggregate>;
+    count?: Maybe<CompanyNotesCountAggregate>;
+    groupBy?: Maybe<CompanyNotesAggregateGroupBy>;
+    max?: Maybe<CompanyNotesMaxAggregate>;
+    min?: Maybe<CompanyNotesMinAggregate>;
+    sum?: Maybe<CompanyNotesSumAggregate>;
+};
+  
+export type CompanyNotesAvgAggregate = {
+    id?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type CompanyNotesConnection = {
+    /** Array of nodes. */
+    nodes: Array<CompanyNote>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+
+export type CompanyNotesCountAggregate = {
+    createdAt?: Maybe<Scalars["Int"]["output"]>;
+    id?: Maybe<Scalars["Int"]["output"]>;
+    updatedAt?: Maybe<Scalars["Int"]["output"]>;
+};
+  
+export type CompanyNotesMaxAggregate = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type CompanyNotesMinAggregate = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type CompanyNotesSumAggregate = {
+    id?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+/** Company size */
+export type CompanySize = "ENTERPRISE" | "LARGE" | "MEDIUM" | "SMALL";
+
+export type CompanySort = {
+    direction: SortDirection;
+    field: CompanySortFields;
+    nulls?: InputMaybe<SortNulls>;
+};
+  
+export type CompanySortFields =
+    | "businessType"
+    | "companySize"
+    | "country"
+    | "createdAt"
+    | "id"
+    | "industry"
+    | "name"
+    | "totalRevenue"
+    | "updatedAt"
+    | "website";
+
+
+export type CompanySubscriptionFilter = {
+    and?: InputMaybe<Array<CompanySubscriptionFilter>>;
+    businessType?: InputMaybe<CompanyBusinessTypeFilterComparison>;
+    companySize?: InputMaybe<CompanyCompanySizeFilterComparison>;
+    country?: InputMaybe<StringFieldComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    industry?: InputMaybe<CompanyIndustryFilterComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<CompanySubscriptionFilter>>;
+    totalRevenue?: InputMaybe<IntFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    website?: InputMaybe<StringFieldComparison>;
+};
+
+export type CompanySumAggregate = {
+    id?: Maybe<Scalars["Float"]["output"]>;
+    totalRevenue?: Maybe<Scalars["Float"]["output"]>;
+};
+
+export type CompanyUpdateFilter = {
+    and?: InputMaybe<Array<CompanyUpdateFilter>>;
+    businessType?: InputMaybe<CompanyBusinessTypeFilterComparison>;
+    companySize?: InputMaybe<CompanyCompanySizeFilterComparison>;
+    country?: InputMaybe<StringFieldComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    industry?: InputMaybe<CompanyIndustryFilterComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<CompanyUpdateFilter>>;
+    totalRevenue?: InputMaybe<IntFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    website?: InputMaybe<StringFieldComparison>;
+};
+
+export type CompanyUpdateInput = {
+    businessType?: InputMaybe<BusinessType>;
+    companySize?: InputMaybe<CompanySize>;
+    country?: InputMaybe<Scalars["String"]["input"]>;
+    industry?: InputMaybe<Industry>;
+    name?: InputMaybe<Scalars["String"]["input"]>;
+    salesOwnerId?: InputMaybe<Scalars["ID"]["input"]>;
+    totalRevenue?: InputMaybe<Scalars["Int"]["input"]>;
+    website?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type Contact = {
+    avatarUrl?: Maybe<Scalars["String"]["output"]>;
+    company: Company;
+    createdAt: Scalars["DateTime"]["output"];
+    createdBy: User;
+    deals: ContactDealsConnection;
+    email: Scalars["String"]["output"];
+    id: Scalars["ID"]["output"];
+    jobTitle?: Maybe<Scalars["String"]["output"]>;
+    name: Scalars["String"]["output"];
+    notes: ContactNotesConnection;
+    phone?: Maybe<Scalars["String"]["output"]>;
+    salesOwner: User;
+    score?: Maybe<Scalars["Int"]["output"]>;
+    stage: ContactStage;
+    status: ContactStatus;
+    timezone?: Maybe<Scalars["String"]["output"]>;
+    updatedAt: Scalars["DateTime"]["output"];
+    updatedBy?: Maybe<User>;
+};
