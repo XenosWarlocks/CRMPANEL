@@ -481,3 +481,38 @@ export type CompanyDeleteFilter = {
     updatedAt?: InputMaybe<DateFieldComparison>;
     website?: InputMaybe<StringFieldComparison>;
 };
+
+export type CompanyDeleteResponse = {
+    avatarUrl?: Maybe<Scalars["String"]["output"]>;
+    businessType?: Maybe<BusinessType>;
+    companySize?: Maybe<CompanySize>;
+    country?: Maybe<Scalars["String"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    industry?: Maybe<Industry>;
+    name?: Maybe<Scalars["String"]["output"]>;
+    totalRevenue?: Maybe<Scalars["Int"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+    website?: Maybe<Scalars["String"]["output"]>;
+};
+  
+export type CompanyFilter = {
+    and?: InputMaybe<Array<CompanyFilter>>;
+    businessType?: InputMaybe<CompanyBusinessTypeFilterComparison>;
+    companySize?: InputMaybe<CompanyCompanySizeFilterComparison>;
+    contacts?: InputMaybe<CompanyFilterContactFilter>;
+    country?: InputMaybe<StringFieldComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    createdBy?: InputMaybe<CompanyFilterUserFilter>;
+    deals?: InputMaybe<CompanyFilterDealFilter>;
+    id?: InputMaybe<IdFilterComparison>;
+    industry?: InputMaybe<CompanyIndustryFilterComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    notes?: InputMaybe<CompanyFilterCompanyNoteFilter>;
+    or?: InputMaybe<Array<CompanyFilter>>;
+    salesOwner?: InputMaybe<CompanyFilterUserFilter>;
+    totalRevenue?: InputMaybe<IntFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    updatedBy?: InputMaybe<CompanyFilterUserFilter>;
+    website?: InputMaybe<StringFieldComparison>;
+};
