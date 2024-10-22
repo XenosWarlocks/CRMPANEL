@@ -1207,4 +1207,248 @@ export type ContactStatusFilterComparison = {
     notIn?: InputMaybe<Array<ContactStatus>>;
     notLike?: InputMaybe<ContactStatus>;
 };
+
+export type ContactSubscriptionFilter = {
+    and?: InputMaybe<Array<ContactSubscriptionFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<ContactSubscriptionFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    score?: InputMaybe<IntFieldComparison>;
+    stage?: InputMaybe<ContactStageFilterComparison>;
+    status?: InputMaybe<ContactStatusFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
   
+export type ContactUpdateFilter = {
+    and?: InputMaybe<Array<ContactUpdateFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<ContactUpdateFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    score?: InputMaybe<IntFieldComparison>;
+    stage?: InputMaybe<ContactStageFilterComparison>;
+    status?: InputMaybe<ContactStatusFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type ContactUpdateInput = {
+    companyId?: InputMaybe<Scalars["String"]["input"]>;
+    email?: InputMaybe<Scalars["String"]["input"]>;
+    jobTitle?: InputMaybe<Scalars["String"]["input"]>;
+    name?: InputMaybe<Scalars["String"]["input"]>;
+    phone?: InputMaybe<Scalars["String"]["input"]>;
+    salesOwnerId?: InputMaybe<Scalars["ID"]["input"]>;
+    score?: InputMaybe<Scalars["Int"]["input"]>;
+    stage?: InputMaybe<ContactStage>;
+    status?: InputMaybe<ContactStatus>;
+    timezone?: InputMaybe<Scalars["String"]["input"]>;
+};
+  
+export type CreateAuditSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: AuditSubscriptionFilter;
+};
+  
+export type CreateCompanyNoteSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: CompanyNoteSubscriptionFilter;
+};
+  
+export type CreateCompanySubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: CompanySubscriptionFilter;
+};
+  
+export type CreateContactNoteSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: ContactNoteSubscriptionFilter;
+};
+  
+export type CreateContactSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: ContactSubscriptionFilter;
+};
+  
+export type CreateDealStageSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: DealStageSubscriptionFilter;
+};
+  
+export type CreateDealSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: DealSubscriptionFilter;
+};
+  
+export type CreateEventCategorySubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: EventCategorySubscriptionFilter;
+};
+  
+export type CreateEventSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: EventSubscriptionFilter;
+};
+  
+export type CreateManyCompaniesInput = {
+    /** Array of records to create */
+    companies: Array<CompanyCreateInput>;
+};
+  
+export type CreateManyCompanyNotesInput = {
+    /** Array of records to create */
+    companyNotes: Array<CompanyNoteCreateInput>;
+};
+  
+export type CreateManyContactNotesInput = {
+    /** Array of records to create */
+    contactNotes: Array<ContactNoteCreateInput>;
+};
+  
+export type CreateManyContactsInput = {
+    /** Array of records to create */
+    contacts: Array<ContactCreateInput>;
+};
+  
+export type CreateManyDealStagesInput = {
+    /** Array of records to create */
+    dealStages: Array<DealStageCreateInput>;
+};
+  
+export type CreateManyDealsInput = {
+    /** Array of records to create */
+    deals: Array<DealCreateInput>;
+};
+
+export type CreateManyEventCategoriesInput = {
+    /** Array of records to create */
+    eventCategories: Array<EventCategoryCreateInput>;
+};
+  
+export type CreateManyEventsInput = {
+    /** Array of records to create */
+    events: Array<EventCreateInput>;
+};
+  
+export type CreateManyQuotesInput = {
+    /** Array of records to create */
+    quotes: Array<QuoteCreateInput>;
+};
+  
+export type CreateManyTaskCommentsInput = {
+    /** Array of records to create */
+    taskComments: Array<TaskCommentCreateInput>;
+};
+  
+export type CreateManyTaskStagesInput = {
+    /** Array of records to create */
+    taskStages: Array<TaskStageCreateInput>;
+};
+  
+export type CreateManyTasksInput = {
+    /** Array of records to create */
+    tasks: Array<TaskCreateInput>;
+};
+  
+export type CreateManyUsersInput = {
+    /** Array of records to create */
+    users: Array<UserCreateInput>;
+};
+  
+export type CreateOneCompanyInput = {
+    /** The record to create */
+    company: CompanyCreateInput;
+};
+  
+export type CreateOneCompanyNoteInput = {
+    /** The record to create */
+    companyNote: CompanyNoteCreateInput;
+};
+  
+export type CreateOneContactInput = {
+    /** The record to create */
+    contact: ContactCreateInput;
+};
+  
+export type CreateOneContactNoteInput = {
+    /** The record to create */
+    contactNote: ContactNoteCreateInput;
+};
+  
+export type CreateOneDealInput = {
+    /** The record to create */
+    deal: DealCreateInput;
+};
+  
+export type CreateOneDealStageInput = {
+    /** The record to create */
+    dealStage: DealStageCreateInput;
+};
+  
+export type CreateOneEventCategoryInput = {
+    /** The record to create */
+    eventCategory: EventCategoryCreateInput;
+};
+  
+export type CreateOneEventInput = {
+    /** The record to create */
+    event: EventCreateInput;
+};
+  
+export type CreateOneQuoteInput = {
+    /** The record to create */
+    quote: QuoteCreateInput;
+};
+  
+export type CreateOneTaskCommentInput = {
+    /** The record to create */
+    taskComment: TaskCommentCreateInput;
+};
+  
+export type CreateOneTaskInput = {
+    /** The record to create */
+    task: TaskCreateInput;
+};
+  
+export type CreateOneTaskStageInput = {
+    /** The record to create */
+    taskStage: TaskStageCreateInput;
+};
+  
+export type CreateOneUserInput = {
+    /** The record to create */
+    user: UserCreateInput;
+};
+  
+export type CreateQuoteSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: QuoteSubscriptionFilter;
+};
+  
+export type CreateTaskCommentSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: TaskCommentSubscriptionFilter;
+};
+  
+export type CreateTaskStageSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: TaskStageSubscriptionFilter;
+};
+  
+export type CreateTaskSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: TaskSubscriptionFilter;
+};
+  
+export type CreateUserSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: UserSubscriptionFilter;
+};
