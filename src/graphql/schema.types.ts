@@ -857,3 +857,63 @@ export type Contact = {
     updatedAt: Scalars["DateTime"]["output"];
     updatedBy?: Maybe<User>;
 };
+
+export type ContactDealsArgs = {
+    filter?: DealFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<DealSort>;
+};
+  
+export type ContactNotesArgs = {
+    filter?: ContactNoteFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<ContactNoteSort>;
+};
+  
+export type ContactAggregateFilter = {
+    and?: InputMaybe<Array<ContactAggregateFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<ContactAggregateFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    score?: InputMaybe<IntFieldComparison>;
+    stage?: InputMaybe<ContactStageFilterComparison>;
+    status?: InputMaybe<ContactStatusFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type ContactConnection = {
+    /** Array of nodes. */
+    nodes: Array<Contact>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type ContactCreateInput = {
+    companyId: Scalars["ID"]["input"];
+    email: Scalars["String"]["input"];
+    jobTitle?: InputMaybe<Scalars["String"]["input"]>;
+    name: Scalars["String"]["input"];
+    phone?: InputMaybe<Scalars["String"]["input"]>;
+    salesOwnerId: Scalars["ID"]["input"];
+    score?: InputMaybe<Scalars["Int"]["input"]>;
+    stage?: InputMaybe<ContactStage>;
+    status?: InputMaybe<ContactStatus>;
+    timezone?: InputMaybe<Scalars["String"]["input"]>;
+};
+  
+export type ContactDealsConnection = {
+    /** Array of nodes. */
+    nodes: Array<Deal>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+
