@@ -917,3 +917,294 @@ export type ContactDealsConnection = {
     totalCount: Scalars["Int"]["output"];
 };
 
+export type ContactDeleteFilter = {
+    and?: InputMaybe<Array<ContactDeleteFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<ContactDeleteFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    score?: InputMaybe<IntFieldComparison>;
+    stage?: InputMaybe<ContactStageFilterComparison>;
+    status?: InputMaybe<ContactStatusFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type ContactDeleteResponse = {
+    avatarUrl?: Maybe<Scalars["String"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    email?: Maybe<Scalars["String"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    jobTitle?: Maybe<Scalars["String"]["output"]>;
+    name?: Maybe<Scalars["String"]["output"]>;
+    phone?: Maybe<Scalars["String"]["output"]>;
+    score?: Maybe<Scalars["Int"]["output"]>;
+    stage?: Maybe<ContactStage>;
+    status?: Maybe<ContactStatus>;
+    timezone?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type ContactFilter = {
+    and?: InputMaybe<Array<ContactFilter>>;
+    company?: InputMaybe<ContactFilterCompanyFilter>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    createdBy?: InputMaybe<ContactFilterUserFilter>;
+    deals?: InputMaybe<ContactFilterDealFilter>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    notes?: InputMaybe<ContactFilterContactNoteFilter>;
+    or?: InputMaybe<Array<ContactFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    salesOwner?: InputMaybe<ContactFilterUserFilter>;
+    score?: InputMaybe<IntFieldComparison>;
+    stage?: InputMaybe<ContactStageFilterComparison>;
+    status?: InputMaybe<ContactStatusFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    updatedBy?: InputMaybe<ContactFilterUserFilter>;
+};
+  
+export type ContactFilterCompanyFilter = {
+    and?: InputMaybe<Array<ContactFilterCompanyFilter>>;
+    businessType?: InputMaybe<CompanyBusinessTypeFilterComparison>;
+    companySize?: InputMaybe<CompanyCompanySizeFilterComparison>;
+    country?: InputMaybe<StringFieldComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    industry?: InputMaybe<CompanyIndustryFilterComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<ContactFilterCompanyFilter>>;
+    totalRevenue?: InputMaybe<IntFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    website?: InputMaybe<StringFieldComparison>;
+};
+  
+export type ContactFilterContactNoteFilter = {
+    and?: InputMaybe<Array<ContactFilterContactNoteFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<ContactFilterContactNoteFilter>>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type ContactFilterDealFilter = {
+    and?: InputMaybe<Array<ContactFilterDealFilter>>;
+    closeDateDay?: InputMaybe<IntFieldComparison>;
+    closeDateMonth?: InputMaybe<IntFieldComparison>;
+    closeDateYear?: InputMaybe<IntFieldComparison>;
+    companyId?: InputMaybe<IdFilterComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    dealOwnerId?: InputMaybe<IdFilterComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<ContactFilterDealFilter>>;
+    stageId?: InputMaybe<IdFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    value?: InputMaybe<FloatFieldComparison>;
+};
+  
+export type ContactFilterUserFilter = {
+    and?: InputMaybe<Array<ContactFilterUserFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<ContactFilterUserFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type ContactNote = {
+    contact: Contact;
+    createdAt: Scalars["DateTime"]["output"];
+    createdBy: User;
+    id: Scalars["ID"]["output"];
+    note: Scalars["String"]["output"];
+    updatedAt: Scalars["DateTime"]["output"];
+    updatedBy?: Maybe<User>;
+};
+  
+export type ContactNoteConnection = {
+    /** Array of nodes. */
+    nodes: Array<ContactNote>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type ContactNoteCreateInput = {
+    contactId: Scalars["ID"]["input"];
+    note: Scalars["String"]["input"];
+};
+  
+export type ContactNoteDeleteFilter = {
+    and?: InputMaybe<Array<ContactNoteDeleteFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<ContactNoteDeleteFilter>>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type ContactNoteDeleteResponse = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    note?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type ContactNoteFilter = {
+    and?: InputMaybe<Array<ContactNoteFilter>>;
+    contact?: InputMaybe<ContactNoteFilterContactFilter>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    createdBy?: InputMaybe<ContactNoteFilterUserFilter>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<ContactNoteFilter>>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    updatedBy?: InputMaybe<ContactNoteFilterUserFilter>;
+};
+  
+export type ContactNoteFilterContactFilter = {
+    and?: InputMaybe<Array<ContactNoteFilterContactFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<ContactNoteFilterContactFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    score?: InputMaybe<IntFieldComparison>;
+    stage?: InputMaybe<ContactStageFilterComparison>;
+    status?: InputMaybe<ContactStatusFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type ContactNoteFilterUserFilter = {
+    and?: InputMaybe<Array<ContactNoteFilterUserFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<ContactNoteFilterUserFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type ContactNoteSort = {
+    direction: SortDirection;
+    field: ContactNoteSortFields;
+    nulls?: InputMaybe<SortNulls>;
+};
+  
+export type ContactNoteSortFields = "createdAt" | "id" | "updatedAt";
+  
+export type ContactNoteSubscriptionFilter = {
+    and?: InputMaybe<Array<ContactNoteSubscriptionFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<ContactNoteSubscriptionFilter>>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type ContactNoteUpdateFilter = {
+    and?: InputMaybe<Array<ContactNoteUpdateFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<ContactNoteUpdateFilter>>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type ContactNoteUpdateInput = {
+    note: Scalars["String"]["input"];
+};
+  
+export type ContactNotesConnection = {
+    /** Array of nodes. */
+    nodes: Array<ContactNote>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type ContactSort = {
+    direction: SortDirection;
+    field: ContactSortFields;
+    nulls?: InputMaybe<SortNulls>;
+};
+  
+export type ContactSortFields =
+    | "createdAt"
+    | "email"
+    | "id"
+    | "jobTitle"
+    | "name"
+    | "phone"
+    | "score"
+    | "stage"
+    | "status"
+    | "timezone"
+    | "updatedAt";
+  
+/** Contact stage */
+export type ContactStage = "CUSTOMER" | "LEAD" | "SALES_QUALIFIED_LEAD";
+  
+export type ContactStageFilterComparison = {
+    eq?: InputMaybe<ContactStage>;
+    gt?: InputMaybe<ContactStage>;
+    gte?: InputMaybe<ContactStage>;
+    iLike?: InputMaybe<ContactStage>;
+    in?: InputMaybe<Array<ContactStage>>;
+    is?: InputMaybe<Scalars["Boolean"]["input"]>;
+    isNot?: InputMaybe<Scalars["Boolean"]["input"]>;
+    like?: InputMaybe<ContactStage>;
+    lt?: InputMaybe<ContactStage>;
+    lte?: InputMaybe<ContactStage>;
+    neq?: InputMaybe<ContactStage>;
+    notILike?: InputMaybe<ContactStage>;
+    notIn?: InputMaybe<Array<ContactStage>>;
+    notLike?: InputMaybe<ContactStage>;
+};
+  
+/** Contact status */
+export type ContactStatus =
+    | "CHURNED"
+    | "CONTACTED"
+    | "INTERESTED"
+    | "LOST"
+    | "NEGOTIATION"
+    | "NEW"
+    | "QUALIFIED"
+    | "UNQUALIFIED"
+    | "WON";
+  
+export type ContactStatusFilterComparison = {
+    eq?: InputMaybe<ContactStatus>;
+    gt?: InputMaybe<ContactStatus>;
+    gte?: InputMaybe<ContactStatus>;
+    iLike?: InputMaybe<ContactStatus>;
+    in?: InputMaybe<Array<ContactStatus>>;
+    is?: InputMaybe<Scalars["Boolean"]["input"]>;
+    isNot?: InputMaybe<Scalars["Boolean"]["input"]>;
+    like?: InputMaybe<ContactStatus>;
+    lt?: InputMaybe<ContactStatus>;
+    lte?: InputMaybe<ContactStatus>;
+    neq?: InputMaybe<ContactStatus>;
+    notILike?: InputMaybe<ContactStatus>;
+    notIn?: InputMaybe<Array<ContactStatus>>;
+    notLike?: InputMaybe<ContactStatus>;
+};
+  
