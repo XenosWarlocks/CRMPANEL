@@ -1452,3 +1452,1515 @@ export type CreateUserSubscriptionFilterInput = {
     /** Specify to filter the records returned. */
     filter: UserSubscriptionFilter;
 };
+
+export type DateFieldComparison = {
+    between?: InputMaybe<DateFieldComparisonBetween>;
+    eq?: InputMaybe<Scalars["DateTime"]["input"]>;
+    gt?: InputMaybe<Scalars["DateTime"]["input"]>;
+    gte?: InputMaybe<Scalars["DateTime"]["input"]>;
+    in?: InputMaybe<Array<Scalars["DateTime"]["input"]>>;
+    is?: InputMaybe<Scalars["Boolean"]["input"]>;
+    isNot?: InputMaybe<Scalars["Boolean"]["input"]>;
+    lt?: InputMaybe<Scalars["DateTime"]["input"]>;
+    lte?: InputMaybe<Scalars["DateTime"]["input"]>;
+    neq?: InputMaybe<Scalars["DateTime"]["input"]>;
+    notBetween?: InputMaybe<DateFieldComparisonBetween>;
+    notIn?: InputMaybe<Array<Scalars["DateTime"]["input"]>>;
+};
+  
+export type DateFieldComparisonBetween = {
+    lower: Scalars["DateTime"]["input"];
+    upper: Scalars["DateTime"]["input"];
+};
+
+export type Deal = {
+    closeDateDay?: Maybe<Scalars["Int"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Int"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Int"]["output"]>;
+    company: Company;
+    companyId: Scalars["ID"]["output"];
+    createdAt: Scalars["DateTime"]["output"];
+    createdBy: User;
+    dealContact: Contact;
+    dealOwner: User;
+    dealOwnerId: Scalars["ID"]["output"];
+    id: Scalars["ID"]["output"];
+    notes: Scalars["String"]["output"];
+    stage?: Maybe<DealStage>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title: Scalars["String"]["output"];
+    updatedAt: Scalars["DateTime"]["output"];
+    updatedBy?: Maybe<User>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type DealAggregateFilter = {
+    and?: InputMaybe<Array<DealAggregateFilter>>;
+    closeDateDay?: InputMaybe<IntFieldComparison>;
+    closeDateMonth?: InputMaybe<IntFieldComparison>;
+    closeDateYear?: InputMaybe<IntFieldComparison>;
+    companyId?: InputMaybe<IdFilterComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    dealOwnerId?: InputMaybe<IdFilterComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<DealAggregateFilter>>;
+    stageId?: InputMaybe<IdFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    value?: InputMaybe<FloatFieldComparison>;
+};
+  
+export type DealAggregateGroupBy = {
+    closeDateDay?: Maybe<Scalars["Int"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Int"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Int"]["output"]>;
+    companyId?: Maybe<Scalars["ID"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["ID"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type DealAggregateGroupByCreatedAtArgs = {
+    by?: GroupBy;
+};
+  
+export type DealAggregateGroupByUpdatedAtArgs = {
+    by?: GroupBy;
+};
+  
+export type DealAggregateResponse = {
+    avg?: Maybe<DealAvgAggregate>;
+    count?: Maybe<DealCountAggregate>;
+    groupBy?: Maybe<DealAggregateGroupBy>;
+    max?: Maybe<DealMaxAggregate>;
+    min?: Maybe<DealMinAggregate>;
+    sum?: Maybe<DealSumAggregate>;
+};
+  
+export type DealAvgAggregate = {
+    closeDateDay?: Maybe<Scalars["Float"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Float"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Float"]["output"]>;
+    companyId?: Maybe<Scalars["Float"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["Float"]["output"]>;
+    id?: Maybe<Scalars["Float"]["output"]>;
+    stageId?: Maybe<Scalars["Float"]["output"]>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
+
+export type DealConnection = {
+    /** Array of nodes. */
+    nodes: Array<Deal>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type DealCountAggregate = {
+    closeDateDay?: Maybe<Scalars["Int"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Int"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Int"]["output"]>;
+    companyId?: Maybe<Scalars["Int"]["output"]>;
+    createdAt?: Maybe<Scalars["Int"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["Int"]["output"]>;
+    id?: Maybe<Scalars["Int"]["output"]>;
+    stageId?: Maybe<Scalars["Int"]["output"]>;
+    title?: Maybe<Scalars["Int"]["output"]>;
+    updatedAt?: Maybe<Scalars["Int"]["output"]>;
+    value?: Maybe<Scalars["Int"]["output"]>;
+};
+  
+export type DealCreateInput = {
+    companyId: Scalars["ID"]["input"];
+    dealContactId?: InputMaybe<Scalars["ID"]["input"]>;
+    dealOwnerId: Scalars["ID"]["input"];
+    stageId?: InputMaybe<Scalars["ID"]["input"]>;
+    title: Scalars["String"]["input"];
+    value?: InputMaybe<Scalars["Float"]["input"]>;
+};
+
+export type DealDeleteFilter = {
+    and?: InputMaybe<Array<DealDeleteFilter>>;
+    closeDateDay?: InputMaybe<IntFieldComparison>;
+    closeDateMonth?: InputMaybe<IntFieldComparison>;
+    closeDateYear?: InputMaybe<IntFieldComparison>;
+    companyId?: InputMaybe<IdFilterComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    dealOwnerId?: InputMaybe<IdFilterComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<DealDeleteFilter>>;
+    stageId?: InputMaybe<IdFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    value?: InputMaybe<FloatFieldComparison>;
+};
+  
+export type DealDeleteResponse = {
+    closeDateDay?: Maybe<Scalars["Int"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Int"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Int"]["output"]>;
+    companyId?: Maybe<Scalars["ID"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["ID"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    notes?: Maybe<Scalars["String"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type DealFilter = {
+    and?: InputMaybe<Array<DealFilter>>;
+    closeDateDay?: InputMaybe<IntFieldComparison>;
+    closeDateMonth?: InputMaybe<IntFieldComparison>;
+    closeDateYear?: InputMaybe<IntFieldComparison>;
+    company?: InputMaybe<DealFilterCompanyFilter>;
+    companyId?: InputMaybe<IdFilterComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    createdBy?: InputMaybe<DealFilterUserFilter>;
+    dealContact?: InputMaybe<DealFilterContactFilter>;
+    dealOwner?: InputMaybe<DealFilterUserFilter>;
+    dealOwnerId?: InputMaybe<IdFilterComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<DealFilter>>;
+    stage?: InputMaybe<DealFilterDealStageFilter>;
+    stageId?: InputMaybe<IdFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    updatedBy?: InputMaybe<DealFilterUserFilter>;
+    value?: InputMaybe<FloatFieldComparison>;
+};
+  
+export type DealFilterCompanyFilter = {
+    and?: InputMaybe<Array<DealFilterCompanyFilter>>;
+    businessType?: InputMaybe<CompanyBusinessTypeFilterComparison>;
+    companySize?: InputMaybe<CompanyCompanySizeFilterComparison>;
+    country?: InputMaybe<StringFieldComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    industry?: InputMaybe<CompanyIndustryFilterComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<DealFilterCompanyFilter>>;
+    totalRevenue?: InputMaybe<IntFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    website?: InputMaybe<StringFieldComparison>;
+};
+  
+export type DealFilterContactFilter = {
+    and?: InputMaybe<Array<DealFilterContactFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<DealFilterContactFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    score?: InputMaybe<IntFieldComparison>;
+    stage?: InputMaybe<ContactStageFilterComparison>;
+    status?: InputMaybe<ContactStatusFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type DealFilterDealStageFilter = {
+    and?: InputMaybe<Array<DealFilterDealStageFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<DealFilterDealStageFilter>>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type DealFilterUserFilter = {
+    and?: InputMaybe<Array<DealFilterUserFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<DealFilterUserFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type DealMaxAggregate = {
+    closeDateDay?: Maybe<Scalars["Int"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Int"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Int"]["output"]>;
+    companyId?: Maybe<Scalars["ID"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["ID"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type DealMinAggregate = {
+    closeDateDay?: Maybe<Scalars["Int"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Int"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Int"]["output"]>;
+    companyId?: Maybe<Scalars["ID"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["ID"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type DealSort = {
+    direction: SortDirection;
+    field: DealSortFields;
+    nulls?: InputMaybe<SortNulls>;
+};
+  
+export type DealSortFields =
+    | "closeDateDay"
+    | "closeDateMonth"
+    | "closeDateYear"
+    | "companyId"
+    | "createdAt"
+    | "dealOwnerId"
+    | "id"
+    | "stageId"
+    | "title"
+    | "updatedAt"
+    | "value";
+  
+export type DealStage = {
+    createdAt: Scalars["DateTime"]["output"];
+    createdBy: User;
+    deals: Array<Deal>;
+    dealsAggregate: Array<DealStageDealsAggregateResponse>;
+    id: Scalars["ID"]["output"];
+    title: Scalars["String"]["output"];
+    updatedAt: Scalars["DateTime"]["output"];
+    updatedBy?: Maybe<User>;
+};
+
+export type DealStageDealsArgs = {
+    filter?: DealFilter;
+    sorting?: Array<DealSort>;
+};
+  
+export type DealStageDealsAggregateArgs = {
+    filter?: InputMaybe<DealAggregateFilter>;
+};
+  
+export type DealStageConnection = {
+    /** Array of nodes. */
+    nodes: Array<DealStage>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type DealStageCreateInput = {
+    title: Scalars["String"]["input"];
+};
+  
+export type DealStageDealsAggregateGroupBy = {
+    closeDateDay?: Maybe<Scalars["Int"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Int"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Int"]["output"]>;
+    companyId?: Maybe<Scalars["ID"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["ID"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type DealStageDealsAggregateResponse = {
+    avg?: Maybe<DealStageDealsAvgAggregate>;
+    count?: Maybe<DealStageDealsCountAggregate>;
+    groupBy?: Maybe<DealStageDealsAggregateGroupBy>;
+    max?: Maybe<DealStageDealsMaxAggregate>;
+    min?: Maybe<DealStageDealsMinAggregate>;
+    sum?: Maybe<DealStageDealsSumAggregate>;
+};
+  
+export type DealStageDealsAvgAggregate = {
+    closeDateDay?: Maybe<Scalars["Float"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Float"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Float"]["output"]>;
+    companyId?: Maybe<Scalars["Float"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["Float"]["output"]>;
+    id?: Maybe<Scalars["Float"]["output"]>;
+    stageId?: Maybe<Scalars["Float"]["output"]>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type DealStageDealsCountAggregate = {
+    closeDateDay?: Maybe<Scalars["Int"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Int"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Int"]["output"]>;
+    companyId?: Maybe<Scalars["Int"]["output"]>;
+    createdAt?: Maybe<Scalars["Int"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["Int"]["output"]>;
+    id?: Maybe<Scalars["Int"]["output"]>;
+    stageId?: Maybe<Scalars["Int"]["output"]>;
+    title?: Maybe<Scalars["Int"]["output"]>;
+    updatedAt?: Maybe<Scalars["Int"]["output"]>;
+    value?: Maybe<Scalars["Int"]["output"]>;
+};
+  
+export type DealStageDealsMaxAggregate = {
+    closeDateDay?: Maybe<Scalars["Int"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Int"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Int"]["output"]>;
+    companyId?: Maybe<Scalars["ID"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["ID"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
+
+export type DealStageDealsMinAggregate = {
+    closeDateDay?: Maybe<Scalars["Int"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Int"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Int"]["output"]>;
+    companyId?: Maybe<Scalars["ID"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["ID"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
+
+export type DealStageDealsSumAggregate = {
+    closeDateDay?: Maybe<Scalars["Float"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Float"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Float"]["output"]>;
+    companyId?: Maybe<Scalars["Float"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["Float"]["output"]>;
+    id?: Maybe<Scalars["Float"]["output"]>;
+    stageId?: Maybe<Scalars["Float"]["output"]>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type DealStageDeleteFilter = {
+    and?: InputMaybe<Array<DealStageDeleteFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<DealStageDeleteFilter>>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type DealStageDeleteResponse = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type DealStageFilter = {
+    and?: InputMaybe<Array<DealStageFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    createdBy?: InputMaybe<DealStageFilterUserFilter>;
+    deals?: InputMaybe<DealStageFilterDealFilter>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<DealStageFilter>>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    updatedBy?: InputMaybe<DealStageFilterUserFilter>;
+};
+
+
+export type DealStageFilterDealFilter = {
+    and?: InputMaybe<Array<DealStageFilterDealFilter>>;
+    closeDateDay?: InputMaybe<IntFieldComparison>;
+    closeDateMonth?: InputMaybe<IntFieldComparison>;
+    closeDateYear?: InputMaybe<IntFieldComparison>;
+    companyId?: InputMaybe<IdFilterComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    dealOwnerId?: InputMaybe<IdFilterComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<DealStageFilterDealFilter>>;
+    stageId?: InputMaybe<IdFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    value?: InputMaybe<FloatFieldComparison>;
+};
+  
+export type DealStageFilterUserFilter = {
+    and?: InputMaybe<Array<DealStageFilterUserFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<DealStageFilterUserFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type DealStageSort = {
+    direction: SortDirection;
+    field: DealStageSortFields;
+    nulls?: InputMaybe<SortNulls>;
+};
+  
+export type DealStageSortFields = "createdAt" | "id" | "title" | "updatedAt";
+  
+export type DealStageSubscriptionFilter = {
+    and?: InputMaybe<Array<DealStageSubscriptionFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<DealStageSubscriptionFilter>>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type DealStageUpdateFilter = {
+    and?: InputMaybe<Array<DealStageUpdateFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<DealStageUpdateFilter>>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+  export type DealStageUpdateInput = {
+    stageId?: InputMaybe<Scalars["ID"]["input"]>;
+    title?: InputMaybe<Scalars["String"]["input"]>;
+};
+  
+export type DealSubscriptionFilter = {
+    and?: InputMaybe<Array<DealSubscriptionFilter>>;
+    closeDateDay?: InputMaybe<IntFieldComparison>;
+    closeDateMonth?: InputMaybe<IntFieldComparison>;
+    closeDateYear?: InputMaybe<IntFieldComparison>;
+    companyId?: InputMaybe<IdFilterComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    dealOwnerId?: InputMaybe<IdFilterComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<DealSubscriptionFilter>>;
+    stageId?: InputMaybe<IdFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    value?: InputMaybe<FloatFieldComparison>;
+};
+
+export type DealSumAggregate = {
+    closeDateDay?: Maybe<Scalars["Float"]["output"]>;
+    closeDateMonth?: Maybe<Scalars["Float"]["output"]>;
+    closeDateYear?: Maybe<Scalars["Float"]["output"]>;
+    companyId?: Maybe<Scalars["Float"]["output"]>;
+    dealOwnerId?: Maybe<Scalars["Float"]["output"]>;
+    id?: Maybe<Scalars["Float"]["output"]>;
+    stageId?: Maybe<Scalars["Float"]["output"]>;
+    value?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type DealUpdateFilter = {
+    and?: InputMaybe<Array<DealUpdateFilter>>;
+    closeDateDay?: InputMaybe<IntFieldComparison>;
+    closeDateMonth?: InputMaybe<IntFieldComparison>;
+    closeDateYear?: InputMaybe<IntFieldComparison>;
+    companyId?: InputMaybe<IdFilterComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    dealOwnerId?: InputMaybe<IdFilterComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<DealUpdateFilter>>;
+    stageId?: InputMaybe<IdFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    value?: InputMaybe<FloatFieldComparison>;
+};
+  
+export type DealUpdateInput = {
+    closeDateDay?: InputMaybe<Scalars["Int"]["input"]>;
+    closeDateMonth?: InputMaybe<Scalars["Int"]["input"]>;
+    closeDateYear?: InputMaybe<Scalars["Int"]["input"]>;
+    companyId?: InputMaybe<Scalars["ID"]["input"]>;
+    dealContactId?: InputMaybe<Scalars["ID"]["input"]>;
+    dealOwnerId?: InputMaybe<Scalars["ID"]["input"]>;
+    notes?: InputMaybe<Scalars["String"]["input"]>;
+    stageId?: InputMaybe<Scalars["ID"]["input"]>;
+    title?: InputMaybe<Scalars["String"]["input"]>;
+    value?: InputMaybe<Scalars["Float"]["input"]>;
+};
+  
+export type DeleteManyCompaniesInput = {
+    /** Filter to find records to delete */
+    filter: CompanyDeleteFilter;
+};
+  
+export type DeleteManyCompanyNotesInput = {
+    /** Filter to find records to delete */
+    filter: CompanyNoteDeleteFilter;
+};
+  
+export type DeleteManyContactNotesInput = {
+    /** Filter to find records to delete */
+    filter: ContactNoteDeleteFilter;
+};
+  
+export type DeleteManyContactsInput = {
+    /** Filter to find records to delete */
+    filter: ContactDeleteFilter;
+};
+  
+export type DeleteManyDealStagesInput = {
+    /** Filter to find records to delete */
+    filter: DealStageDeleteFilter;
+};
+  
+export type DeleteManyDealsInput = {
+    /** Filter to find records to delete */
+    filter: DealDeleteFilter;
+};
+  
+export type DeleteManyEventCategoriesInput = {
+    /** Filter to find records to delete */
+    filter: EventCategoryDeleteFilter;
+};
+  
+export type DeleteManyEventsInput = {
+    /** Filter to find records to delete */
+    filter: EventDeleteFilter;
+};
+  
+export type DeleteManyQuotesInput = {
+    /** Filter to find records to delete */
+    filter: QuoteDeleteFilter;
+};
+  
+export type DeleteManyResponse = {
+    /** The number of records deleted. */
+    deletedCount: Scalars["Int"]["output"];
+};
+  
+export type DeleteManyTaskCommentsInput = {
+    /** Filter to find records to delete */
+    filter: TaskCommentDeleteFilter;
+};
+  
+export type DeleteManyTaskStagesInput = {
+    /** Filter to find records to delete */
+    filter: TaskStageDeleteFilter;
+};
+  
+export type DeleteManyTasksInput = {
+    /** Filter to find records to delete */
+    filter: TaskDeleteFilter;
+};
+  
+export type DeleteManyUsersInput = {
+    /** Filter to find records to delete */
+    filter: UserDeleteFilter;
+};
+  
+export type DeleteOneAuditSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: AuditSubscriptionFilter;
+};
+  
+export type DeleteOneCompanyInput = {
+    /** The id of the record to delete. */
+    id: Scalars["ID"]["input"];
+};
+  
+export type DeleteOneCompanyNoteInput = {
+    /** The id of the record to delete. */
+    id: Scalars["ID"]["input"];
+};
+  
+export type DeleteOneCompanyNoteSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: CompanyNoteSubscriptionFilter;
+};
+  
+export type DeleteOneCompanySubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: CompanySubscriptionFilter;
+};
+  
+export type DeleteOneContactInput = {
+    /** The id of the record to delete. */
+    id: Scalars["ID"]["input"];
+};
+  
+export type DeleteOneContactNoteInput = {
+    /** The id of the record to delete. */
+    id: Scalars["ID"]["input"];
+};
+  
+export type DeleteOneContactNoteSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: ContactNoteSubscriptionFilter;
+};
+  
+export type DeleteOneContactSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: ContactSubscriptionFilter;
+};
+  
+export type DeleteOneDealInput = {
+    /** The id of the record to delete. */
+    id: Scalars["ID"]["input"];
+};
+  
+export type DeleteOneDealStageInput = {
+    /** The id of the record to delete. */
+    id: Scalars["ID"]["input"];
+};
+  
+export type DeleteOneDealStageSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: DealStageSubscriptionFilter;
+};
+  
+export type DeleteOneDealSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: DealSubscriptionFilter;
+};
+  
+export type DeleteOneEventCategoryInput = {
+    /** The id of the record to delete. */
+    id: Scalars["ID"]["input"];
+};
+  
+export type DeleteOneEventCategorySubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: EventCategorySubscriptionFilter;
+};
+  
+export type DeleteOneEventInput = {
+    /** The id of the record to delete. */
+    id: Scalars["ID"]["input"];
+};
+  
+export type DeleteOneEventSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: EventSubscriptionFilter;
+};
+  
+export type DeleteOneQuoteInput = {
+    /** The id of the record to delete. */
+    id: Scalars["ID"]["input"];
+};
+  
+export type DeleteOneQuoteSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: QuoteSubscriptionFilter;
+};
+  
+export type DeleteOneTaskCommentInput = {
+    /** The id of the record to delete. */
+    id: Scalars["ID"]["input"];
+};
+  
+export type DeleteOneTaskCommentSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: TaskCommentSubscriptionFilter;
+};
+  
+export type DeleteOneTaskInput = {
+    /** The id of the record to delete. */
+    id: Scalars["ID"]["input"];
+};
+  
+export type DeleteOneTaskStageInput = {
+    /** The id of the record to delete. */
+    id: Scalars["ID"]["input"];
+};
+  
+export type DeleteOneTaskStageSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: TaskStageSubscriptionFilter;
+};
+  
+export type DeleteOneTaskSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: TaskSubscriptionFilter;
+};
+  
+export type DeleteOneUserInput = {
+    /** The id of the record to delete. */
+    id: Scalars["ID"]["input"];
+};
+  
+export type DeleteOneUserSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: UserSubscriptionFilter;
+};
+
+export type Event = {
+    category: EventCategory;
+    color: Scalars["String"]["output"];
+    createdAt: Scalars["DateTime"]["output"];
+    createdBy: User;
+    description: Scalars["String"]["output"];
+    endDate: Scalars["DateTime"]["output"];
+    id: Scalars["ID"]["output"];
+    participants: Array<User>;
+    startDate: Scalars["DateTime"]["output"];
+    title: Scalars["String"]["output"];
+    updatedAt: Scalars["DateTime"]["output"];
+    updatedBy?: Maybe<User>;
+};
+  
+export type EventParticipantsArgs = {
+    filter?: UserFilter;
+    sorting?: Array<UserSort>;
+};
+  
+export type EventCategory = {
+    createdAt: Scalars["DateTime"]["output"];
+    createdBy: User;
+    events: Array<EventCategory>;
+    id: Scalars["ID"]["output"];
+    title: Scalars["String"]["output"];
+    updatedAt: Scalars["DateTime"]["output"];
+    updatedBy?: Maybe<User>;
+};
+  
+export type EventCategoryEventsArgs = {
+    filter?: EventCategoryFilter;
+    sorting?: Array<EventCategorySort>;
+};
+  
+export type EventCategoryConnection = {
+    /** Array of nodes. */
+    nodes: Array<EventCategory>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type EventCategoryCreateInput = {
+    title: Scalars["String"]["input"];
+};
+  
+export type EventCategoryDeleteFilter = {
+    and?: InputMaybe<Array<EventCategoryDeleteFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<EventCategoryDeleteFilter>>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type EventCategoryDeleteResponse = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+
+export type EventCategoryFilter = {
+    and?: InputMaybe<Array<EventCategoryFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    createdBy?: InputMaybe<EventCategoryFilterUserFilter>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<EventCategoryFilter>>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    updatedBy?: InputMaybe<EventCategoryFilterUserFilter>;
+};
+  
+export type EventCategoryFilterUserFilter = {
+    and?: InputMaybe<Array<EventCategoryFilterUserFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<EventCategoryFilterUserFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type EventCategorySort = {
+    direction: SortDirection;
+    field: EventCategorySortFields;
+    nulls?: InputMaybe<SortNulls>;
+};
+  
+export type EventCategorySortFields =
+    | "createdAt"
+    | "id"
+    | "title"
+    | "updatedAt";
+  
+export type EventCategorySubscriptionFilter = {
+    and?: InputMaybe<Array<EventCategorySubscriptionFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<EventCategorySubscriptionFilter>>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type EventCategoryUpdateFilter = {
+    and?: InputMaybe<Array<EventCategoryUpdateFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<EventCategoryUpdateFilter>>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type EventCategoryUpdateInput = {
+    title: Scalars["String"]["input"];
+};
+  
+export type EventConnection = {
+    /** Array of nodes. */
+    nodes: Array<Event>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type EventCreateInput = {
+    categoryId: Scalars["ID"]["input"];
+    color: Scalars["String"]["input"];
+    description: Scalars["String"]["input"];
+    endDate: Scalars["DateTime"]["input"];
+    participantIds: Array<Scalars["ID"]["input"]>;
+    startDate: Scalars["DateTime"]["input"];
+    title: Scalars["String"]["input"];
+};
+
+export type EventDeleteFilter = {
+    and?: InputMaybe<Array<EventDeleteFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    description?: InputMaybe<StringFieldComparison>;
+    endDate?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<EventDeleteFilter>>;
+    startDate?: InputMaybe<DateFieldComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type EventDeleteResponse = {
+    color?: Maybe<Scalars["String"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    description?: Maybe<Scalars["String"]["output"]>;
+    endDate?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    startDate?: Maybe<Scalars["DateTime"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type EventFilter = {
+    and?: InputMaybe<Array<EventFilter>>;
+    category?: InputMaybe<EventFilterEventCategoryFilter>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    createdBy?: InputMaybe<EventFilterUserFilter>;
+    description?: InputMaybe<StringFieldComparison>;
+    endDate?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<EventFilter>>;
+    startDate?: InputMaybe<DateFieldComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    updatedBy?: InputMaybe<EventFilterUserFilter>;
+};
+  
+export type EventFilterEventCategoryFilter = {
+    and?: InputMaybe<Array<EventFilterEventCategoryFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<EventFilterEventCategoryFilter>>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type EventFilterUserFilter = {
+    and?: InputMaybe<Array<EventFilterUserFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<EventFilterUserFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type EventSort = {
+    direction: SortDirection;
+    field: EventSortFields;
+    nulls?: InputMaybe<SortNulls>;
+};
+  
+export type EventSortFields =
+    | "createdAt"
+    | "description"
+    | "endDate"
+    | "id"
+    | "startDate"
+    | "title"
+    | "updatedAt";
+  
+export type EventSubscriptionFilter = {
+    and?: InputMaybe<Array<EventSubscriptionFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    description?: InputMaybe<StringFieldComparison>;
+    endDate?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<EventSubscriptionFilter>>;
+    startDate?: InputMaybe<DateFieldComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type EventUpdateFilter = {
+    and?: InputMaybe<Array<EventUpdateFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    description?: InputMaybe<StringFieldComparison>;
+    endDate?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<EventUpdateFilter>>;
+    startDate?: InputMaybe<DateFieldComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type EventUpdateInput = {
+    categoryId?: InputMaybe<Scalars["ID"]["input"]>;
+    color?: InputMaybe<Scalars["String"]["input"]>;
+    description?: InputMaybe<Scalars["String"]["input"]>;
+    endDate?: InputMaybe<Scalars["DateTime"]["input"]>;
+    participantIds?: InputMaybe<Array<Scalars["ID"]["input"]>>;
+    startDate?: InputMaybe<Scalars["DateTime"]["input"]>;
+    title?: InputMaybe<Scalars["String"]["input"]>;
+};
+  
+export type FloatFieldComparison = {
+    between?: InputMaybe<FloatFieldComparisonBetween>;
+    eq?: InputMaybe<Scalars["Float"]["input"]>;
+    gt?: InputMaybe<Scalars["Float"]["input"]>;
+    gte?: InputMaybe<Scalars["Float"]["input"]>;
+    in?: InputMaybe<Array<Scalars["Float"]["input"]>>;
+    is?: InputMaybe<Scalars["Boolean"]["input"]>;
+    isNot?: InputMaybe<Scalars["Boolean"]["input"]>;
+    lt?: InputMaybe<Scalars["Float"]["input"]>;
+    lte?: InputMaybe<Scalars["Float"]["input"]>;
+    neq?: InputMaybe<Scalars["Float"]["input"]>;
+    notBetween?: InputMaybe<FloatFieldComparisonBetween>;
+    notIn?: InputMaybe<Array<Scalars["Float"]["input"]>>;
+};
+  
+export type FloatFieldComparisonBetween = {
+    lower: Scalars["Float"]["input"];
+    upper: Scalars["Float"]["input"];
+};
+  
+/** Group by */
+export type GroupBy = "DAY" | "MONTH" | "WEEK" | "YEAR";
+  
+export type IdFilterComparison = {
+    eq?: InputMaybe<Scalars["ID"]["input"]>;
+    gt?: InputMaybe<Scalars["ID"]["input"]>;
+    gte?: InputMaybe<Scalars["ID"]["input"]>;
+    iLike?: InputMaybe<Scalars["ID"]["input"]>;
+    in?: InputMaybe<Array<Scalars["ID"]["input"]>>;
+    is?: InputMaybe<Scalars["Boolean"]["input"]>;
+    isNot?: InputMaybe<Scalars["Boolean"]["input"]>;
+    like?: InputMaybe<Scalars["ID"]["input"]>;
+    lt?: InputMaybe<Scalars["ID"]["input"]>;
+    lte?: InputMaybe<Scalars["ID"]["input"]>;
+    neq?: InputMaybe<Scalars["ID"]["input"]>;
+    notILike?: InputMaybe<Scalars["ID"]["input"]>;
+    notIn?: InputMaybe<Array<Scalars["ID"]["input"]>>;
+    notLike?: InputMaybe<Scalars["ID"]["input"]>;
+};
+  
+/** Industry */
+export type Industry =
+    | "AEROSPACE"
+    | "AGRICULTURE"
+    | "AUTOMOTIVE"
+    | "CHEMICALS"
+    | "CONSTRUCTION"
+    | "DEFENSE"
+    | "EDUCATION"
+    | "ENERGY"
+    | "FINANCIAL_SERVICES"
+    | "FOOD_AND_BEVERAGE"
+    | "GOVERNMENT"
+    | "HEALTHCARE"
+    | "HOSPITALITY"
+    | "INDUSTRIAL_MANUFACTURING"
+    | "INSURANCE"
+    | "LIFE_SCIENCES"
+    | "LOGISTICS"
+    | "MEDIA"
+    | "MINING"
+    | "NONPROFIT"
+    | "OTHER"
+    | "PHARMACEUTICALS"
+    | "PROFESSIONAL_SERVICES"
+    | "REAL_ESTATE"
+    | "RETAIL"
+    | "TECHNOLOGY"
+    | "TELECOMMUNICATIONS"
+    | "TRANSPORTATION"
+    | "UTILITIES";
+  
+export type IntFieldComparison = {
+    between?: InputMaybe<IntFieldComparisonBetween>;
+    eq?: InputMaybe<Scalars["Int"]["input"]>;
+    gt?: InputMaybe<Scalars["Int"]["input"]>;
+    gte?: InputMaybe<Scalars["Int"]["input"]>;
+    in?: InputMaybe<Array<Scalars["Int"]["input"]>>;
+    is?: InputMaybe<Scalars["Boolean"]["input"]>;
+    isNot?: InputMaybe<Scalars["Boolean"]["input"]>;
+    lt?: InputMaybe<Scalars["Int"]["input"]>;
+    lte?: InputMaybe<Scalars["Int"]["input"]>;
+    neq?: InputMaybe<Scalars["Int"]["input"]>;
+    notBetween?: InputMaybe<IntFieldComparisonBetween>;
+    notIn?: InputMaybe<Array<Scalars["Int"]["input"]>>;
+};
+
+export type IntFieldComparisonBetween = {
+    lower: Scalars["Int"]["input"];
+    upper: Scalars["Int"]["input"];
+};
+  
+export type LoginInput = {
+    email: Scalars["String"]["input"];
+};
+  
+export type Mutation = {
+    createManyCompanies: Array<Company>;
+    createManyCompanyNotes: Array<CompanyNote>;
+    createManyContactNotes: Array<ContactNote>;
+    createManyContacts: Array<Contact>;
+    createManyDealStages: Array<DealStage>;
+    createManyDeals: Array<Deal>;
+    createManyEventCategories: Array<EventCategory>;
+    createManyEvents: Array<Event>;
+    createManyQuotes: Array<Quote>;
+    createManyTaskComments: Array<TaskComment>;
+    createManyTaskStages: Array<TaskStage>;
+    createManyTasks: Array<Task>;
+    createManyUsers: Array<User>;
+    createOneCompany: Company;
+    createOneCompanyNote: CompanyNote;
+    createOneContact: Contact;
+    createOneContactNote: ContactNote;
+    createOneDeal: Deal;
+    createOneDealStage: DealStage;
+    createOneEvent: Event;
+    createOneEventCategory: EventCategory;
+    createOneQuote: Quote;
+    createOneTask: Task;
+    createOneTaskComment: TaskComment;
+    createOneTaskStage: TaskStage;
+    createOneUser: User;
+    deleteManyCompanies: DeleteManyResponse;
+    deleteManyCompanyNotes: DeleteManyResponse;
+    deleteManyContactNotes: DeleteManyResponse;
+    deleteManyContacts: DeleteManyResponse;
+    deleteManyDealStages: DeleteManyResponse;
+    deleteManyDeals: DeleteManyResponse;
+    deleteManyEventCategories: DeleteManyResponse;
+    deleteManyEvents: DeleteManyResponse;
+    deleteManyQuotes: DeleteManyResponse;
+    deleteManyTaskComments: DeleteManyResponse;
+    deleteManyTaskStages: DeleteManyResponse;
+    deleteManyTasks: DeleteManyResponse;
+    deleteManyUsers: DeleteManyResponse;
+    deleteOneCompany: CompanyDeleteResponse;
+    deleteOneCompanyNote: CompanyNoteDeleteResponse;
+    deleteOneContact: ContactDeleteResponse;
+    deleteOneContactNote: ContactNoteDeleteResponse;
+    deleteOneDeal: DealDeleteResponse;
+    deleteOneDealStage: DealStageDeleteResponse;
+    deleteOneEvent: EventDeleteResponse;
+    deleteOneEventCategory: EventCategoryDeleteResponse;
+    deleteOneQuote: QuoteDeleteResponse;
+    deleteOneTask: TaskDeleteResponse;
+    deleteOneTaskComment: TaskCommentDeleteResponse;
+    deleteOneTaskStage: TaskStageDeleteResponse;
+    deleteOneUser: UserDeleteResponse;
+    login: AuthResponse;
+    refreshToken: AuthResponse;
+    register: User;
+    updateManyCompanies: UpdateManyResponse;
+    updateManyCompanyNotes: UpdateManyResponse;
+    updateManyContactNotes: UpdateManyResponse;
+    updateManyContacts: UpdateManyResponse;
+    updateManyDealStages: UpdateManyResponse;
+    updateManyDeals: UpdateManyResponse;
+    updateManyEventCategories: UpdateManyResponse;
+    updateManyEvents: UpdateManyResponse;
+    updateManyQuotes: UpdateManyResponse;
+    updateManyTaskComments: UpdateManyResponse;
+    updateManyTaskStages: UpdateManyResponse;
+    updateManyTasks: UpdateManyResponse;
+    updateManyUsers: UpdateManyResponse;
+    updateOneCompany: Company;
+    updateOneCompanyNote: CompanyNote;
+    updateOneContact: Contact;
+    updateOneContactNote: ContactNote;
+    updateOneDeal: Deal;
+    updateOneDealStage: DealStage;
+    updateOneEvent: Event;
+    updateOneEventCategory: EventCategory;
+    updateOneQuote: Quote;
+    updateOneTask: Task;
+    updateOneTaskComment: TaskComment;
+    updateOneTaskStage: TaskStage;
+    updateOneUser: User;
+};
+  
+export type MutationCreateManyCompaniesArgs = {
+    input: CreateManyCompaniesInput;
+};
+  
+export type MutationCreateManyCompanyNotesArgs = {
+    input: CreateManyCompanyNotesInput;
+};
+  
+export type MutationCreateManyContactNotesArgs = {
+    input: CreateManyContactNotesInput;
+};
+  
+export type MutationCreateManyContactsArgs = {
+    input: CreateManyContactsInput;
+};
+  
+export type MutationCreateManyDealStagesArgs = {
+    input: CreateManyDealStagesInput;
+};
+  
+export type MutationCreateManyDealsArgs = {
+    input: CreateManyDealsInput;
+};
+  
+export type MutationCreateManyEventCategoriesArgs = {
+    input: CreateManyEventCategoriesInput;
+};
+  
+export type MutationCreateManyEventsArgs = {
+    input: CreateManyEventsInput;
+};
+  
+export type MutationCreateManyQuotesArgs = {
+    input: CreateManyQuotesInput;
+};
+  
+export type MutationCreateManyTaskCommentsArgs = {
+    input: CreateManyTaskCommentsInput;
+};
+  
+export type MutationCreateManyTaskStagesArgs = {
+    input: CreateManyTaskStagesInput;
+};
+  
+export type MutationCreateManyTasksArgs = {
+    input: CreateManyTasksInput;
+};
+  
+export type MutationCreateManyUsersArgs = {
+    input: CreateManyUsersInput;
+};
+  
+export type MutationCreateOneCompanyArgs = {
+    input: CreateOneCompanyInput;
+};
+  
+export type MutationCreateOneCompanyNoteArgs = {
+    input: CreateOneCompanyNoteInput;
+};
+  
+export type MutationCreateOneContactArgs = {
+    input: CreateOneContactInput;
+};
+  
+export type MutationCreateOneContactNoteArgs = {
+    input: CreateOneContactNoteInput;
+};
+  
+export type MutationCreateOneDealArgs = {
+    input: CreateOneDealInput;
+};
+  
+export type MutationCreateOneDealStageArgs = {
+    input: CreateOneDealStageInput;
+};
+  
+export type MutationCreateOneEventArgs = {
+    input: CreateOneEventInput;
+};
+  
+export type MutationCreateOneEventCategoryArgs = {
+    input: CreateOneEventCategoryInput;
+};
+  
+export type MutationCreateOneQuoteArgs = {
+    input: CreateOneQuoteInput;
+};
+  
+export type MutationCreateOneTaskArgs = {
+    input: CreateOneTaskInput;
+};
+  
+export type MutationCreateOneTaskCommentArgs = {
+    input: CreateOneTaskCommentInput;
+};
+  
+export type MutationCreateOneTaskStageArgs = {
+    input: CreateOneTaskStageInput;
+};
+  
+export type MutationCreateOneUserArgs = {
+    input: CreateOneUserInput;
+};
+  
+export type MutationDeleteManyCompaniesArgs = {
+    input: DeleteManyCompaniesInput;
+};
+  
+export type MutationDeleteManyCompanyNotesArgs = {
+    input: DeleteManyCompanyNotesInput;
+};
+  
+export type MutationDeleteManyContactNotesArgs = {
+    input: DeleteManyContactNotesInput;
+};
+  
+export type MutationDeleteManyContactsArgs = {
+    input: DeleteManyContactsInput;
+};
+  
+export type MutationDeleteManyDealStagesArgs = {
+    input: DeleteManyDealStagesInput;
+};
+  
+export type MutationDeleteManyDealsArgs = {
+    input: DeleteManyDealsInput;
+};
+  
+export type MutationDeleteManyEventCategoriesArgs = {
+    input: DeleteManyEventCategoriesInput;
+};
+  
+export type MutationDeleteManyEventsArgs = {
+    input: DeleteManyEventsInput;
+};
+  
+export type MutationDeleteManyQuotesArgs = {
+    input: DeleteManyQuotesInput;
+};
+  
+export type MutationDeleteManyTaskCommentsArgs = {
+    input: DeleteManyTaskCommentsInput;
+};
+  
+export type MutationDeleteManyTaskStagesArgs = {
+    input: DeleteManyTaskStagesInput;
+};
+  
+export type MutationDeleteManyTasksArgs = {
+    input: DeleteManyTasksInput;
+  };
+  
+export type MutationDeleteManyUsersArgs = {
+    input: DeleteManyUsersInput;
+};
+  
+export type MutationDeleteOneCompanyArgs = {
+    input: DeleteOneCompanyInput;
+};
+  
+export type MutationDeleteOneCompanyNoteArgs = {
+    input: DeleteOneCompanyNoteInput;
+};
+  
+export type MutationDeleteOneContactArgs = {
+    input: DeleteOneContactInput;
+};
+  
+export type MutationDeleteOneContactNoteArgs = {
+    input: DeleteOneContactNoteInput;
+};
+  
+export type MutationDeleteOneDealArgs = {
+    input: DeleteOneDealInput;
+};
+  
+export type MutationDeleteOneDealStageArgs = {
+    input: DeleteOneDealStageInput;
+};
+  
+export type MutationDeleteOneEventArgs = {
+    input: DeleteOneEventInput;
+};
+  
+export type MutationDeleteOneEventCategoryArgs = {
+    input: DeleteOneEventCategoryInput;
+};
+  
+export type MutationDeleteOneQuoteArgs = {
+    input: DeleteOneQuoteInput;
+};
+  
+export type MutationDeleteOneTaskArgs = {
+    input: DeleteOneTaskInput;
+};
+  
+export type MutationDeleteOneTaskCommentArgs = {
+    input: DeleteOneTaskCommentInput;
+};
+  
+export type MutationDeleteOneTaskStageArgs = {
+    input: DeleteOneTaskStageInput;
+};
+  
+export type MutationDeleteOneUserArgs = {
+    input: DeleteOneUserInput;
+};
+  
+export type MutationLoginArgs = {
+    loginInput: LoginInput;
+};
+  
+export type MutationRefreshTokenArgs = {
+    refreshToken: Scalars["String"]["input"];
+};
+  
+export type MutationRegisterArgs = {
+    registerInput: RegisterInput;
+};
+  
+export type MutationUpdateManyCompaniesArgs = {
+    input: UpdateManyCompaniesInput;
+};
+  
+export type MutationUpdateManyCompanyNotesArgs = {
+    input: UpdateManyCompanyNotesInput;
+};
+  
+export type MutationUpdateManyContactNotesArgs = {
+    input: UpdateManyContactNotesInput;
+};
+  
+export type MutationUpdateManyContactsArgs = {
+    input: UpdateManyContactsInput;
+};
+  
+export type MutationUpdateManyDealStagesArgs = {
+    input: UpdateManyDealStagesInput;
+};
+  
+export type MutationUpdateManyDealsArgs = {
+    input: UpdateManyDealsInput;
+};
+  
+export type MutationUpdateManyEventCategoriesArgs = {
+    input: UpdateManyEventCategoriesInput;
+};
+  
+export type MutationUpdateManyEventsArgs = {
+    input: UpdateManyEventsInput;
+};
+  
+export type MutationUpdateManyQuotesArgs = {
+    input: UpdateManyQuotesInput;
+};
+  
+export type MutationUpdateManyTaskCommentsArgs = {
+    input: UpdateManyTaskCommentsInput;
+};
+  
+export type MutationUpdateManyTaskStagesArgs = {
+    input: UpdateManyTaskStagesInput;
+};
+  
+export type MutationUpdateManyTasksArgs = {
+    input: UpdateManyTasksInput;
+};
+  
+export type MutationUpdateManyUsersArgs = {
+    input: UpdateManyUsersInput;
+};
+  
+export type MutationUpdateOneCompanyArgs = {
+    input: UpdateOneCompanyInput;
+};
+  
+export type MutationUpdateOneCompanyNoteArgs = {
+    input: UpdateOneCompanyNoteInput;
+};
+  
+export type MutationUpdateOneContactArgs = {
+    input: UpdateOneContactInput;
+};
+  
+export type MutationUpdateOneContactNoteArgs = {
+    input: UpdateOneContactNoteInput;
+};
+  
+export type MutationUpdateOneDealArgs = {
+    input: UpdateOneDealInput;
+};
+  
+export type MutationUpdateOneDealStageArgs = {
+    input: UpdateOneDealStageInput;
+};
+  
+export type MutationUpdateOneEventArgs = {
+    input: UpdateOneEventInput;
+};
+  
+export type MutationUpdateOneEventCategoryArgs = {
+    input: UpdateOneEventCategoryInput;
+};
+  
+export type MutationUpdateOneQuoteArgs = {
+    input: UpdateOneQuoteInput;
+};
+  
+export type MutationUpdateOneTaskArgs = {
+    input: UpdateOneTaskInput;
+};
+  
+export type MutationUpdateOneTaskCommentArgs = {
+    input: UpdateOneTaskCommentInput;
+};
+  
+export type MutationUpdateOneTaskStageArgs = {
+    input: UpdateOneTaskStageInput;
+};
+  
+export type MutationUpdateOneUserArgs = {
+    input: UpdateOneUserInput;
+};
