@@ -216,15 +216,6 @@ export type CompanyAggregateGroupByCreatedAtArgs = {
 export type CompanyAggregateGroupByUpdatedAtArgs = {
     by?: GroupBy;
 };
-  
-export type CompanyAggregateResponse = {
-    avg?: Maybe<CompanyAvgAggregate>;
-    count?: Maybe<CompanyCountAggregate>;
-    groupBy?: Maybe<CompanyAggregateGroupBy>;
-    max?: Maybe<CompanyMaxAggregate>;
-    min?: Maybe<CompanyMinAggregate>;
-    sum?: Maybe<CompanySumAggregate>;
-};
 
 export type CompanyAggregateResponse = {
     avg?: Maybe<CompanyAvgAggregate>;
@@ -2963,4 +2954,2004 @@ export type MutationUpdateOneTaskStageArgs = {
   
 export type MutationUpdateOneUserArgs = {
     input: UpdateOneUserInput;
+};
+
+export type NumberFieldComparison = {
+    between?: InputMaybe<NumberFieldComparisonBetween>;
+    eq?: InputMaybe<Scalars["Float"]["input"]>;
+    gt?: InputMaybe<Scalars["Float"]["input"]>;
+    gte?: InputMaybe<Scalars["Float"]["input"]>;
+    in?: InputMaybe<Array<Scalars["Float"]["input"]>>;
+    is?: InputMaybe<Scalars["Boolean"]["input"]>;
+    isNot?: InputMaybe<Scalars["Boolean"]["input"]>;
+    lt?: InputMaybe<Scalars["Float"]["input"]>;
+    lte?: InputMaybe<Scalars["Float"]["input"]>;
+    neq?: InputMaybe<Scalars["Float"]["input"]>;
+    notBetween?: InputMaybe<NumberFieldComparisonBetween>;
+    notIn?: InputMaybe<Array<Scalars["Float"]["input"]>>;
+};
+
+export type NumberFieldComparisonBetween = {
+    lower: Scalars["Float"]["input"];
+    upper: Scalars["Float"]["input"];
+};
+  
+export type OffsetPageInfo = {
+    /** true if paging forward and there are more records. */
+    hasNextPage?: Maybe<Scalars["Boolean"]["output"]>;
+    /** true if paging backwards and there are more records. */
+    hasPreviousPage?: Maybe<Scalars["Boolean"]["output"]>;
+};
+  
+export type OffsetPaging = {
+    /** Limit the number of records returned */
+    limit?: InputMaybe<Scalars["Int"]["input"]>;
+    /** Offset to start returning records from */
+    offset?: InputMaybe<Scalars["Int"]["input"]>;
+};
+
+export type Query = {
+    audit: Audit;
+    audits: AuditConnection;
+    companies: CompanyConnection;
+    company: Company;
+    companyAggregate: Array<CompanyAggregateResponse>;
+    companyNote: CompanyNote;
+    companyNotes: CompanyNoteConnection;
+    contact: Contact;
+    contactNote: ContactNote;
+    contactNotes: ContactNoteConnection;
+    contacts: ContactConnection;
+    deal: Deal;
+    dealAggregate: Array<DealAggregateResponse>;
+    dealStage: DealStage;
+    dealStages: DealStageConnection;
+    deals: DealConnection;
+    event: Event;
+    eventCategories: EventCategoryConnection;
+    eventCategory: EventCategory;
+    events: EventConnection;
+    me: User;
+    quote: Quote;
+    quotes: QuoteConnection;
+    task: Task;
+    taskAggregate: Array<TaskAggregateResponse>;
+    taskComment: TaskComment;
+    taskComments: TaskCommentConnection;
+    taskStage: TaskStage;
+    taskStageAggregate: Array<TaskStageAggregateResponse>;
+    taskStages: TaskStageConnection;
+    tasks: TaskConnection;
+    user: User;
+    users: UserConnection;
+};
+  
+export type QueryAuditArgs = {
+    id: Scalars["ID"]["input"];
+};
+  
+export type QueryAuditsArgs = {
+    filter?: AuditFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<AuditSort>;
+};
+  
+export type QueryCompaniesArgs = {
+    filter?: CompanyFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<CompanySort>;
+};
+
+export type QueryCompanyArgs = {
+    id: Scalars["ID"]["input"];
+};
+  
+export type QueryCompanyAggregateArgs = {
+    filter?: InputMaybe<CompanyAggregateFilter>;
+};
+  
+export type QueryCompanyNoteArgs = {
+    id: Scalars["ID"]["input"];
+};
+  
+export type QueryCompanyNotesArgs = {
+    filter?: CompanyNoteFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<CompanyNoteSort>;
+};
+  
+export type QueryContactArgs = {
+    id: Scalars["ID"]["input"];
+};
+  
+export type QueryContactNoteArgs = {
+    id: Scalars["ID"]["input"];
+};
+  
+export type QueryContactNotesArgs = {
+    filter?: ContactNoteFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<ContactNoteSort>;
+};
+  
+export type QueryContactsArgs = {
+    filter?: ContactFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<ContactSort>;
+};
+  
+export type QueryDealArgs = {
+    id: Scalars["ID"]["input"];
+};
+  
+export type QueryDealAggregateArgs = {
+    filter?: InputMaybe<DealAggregateFilter>;
+};
+  
+export type QueryDealStageArgs = {
+    id: Scalars["ID"]["input"];
+};
+  
+export type QueryDealStagesArgs = {
+    filter?: DealStageFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<DealStageSort>;
+};
+  
+export type QueryDealsArgs = {
+    filter?: DealFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<DealSort>;
+};
+  
+export type QueryEventArgs = {
+    id: Scalars["ID"]["input"];
+};
+
+export type QueryEventCategoriesArgs = {
+    filter?: EventCategoryFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<EventCategorySort>;
+};
+  
+export type QueryEventCategoryArgs = {
+    id: Scalars["ID"]["input"];
+};
+  
+export type QueryEventsArgs = {
+    filter?: EventFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<EventSort>;
+};
+  
+export type QueryQuoteArgs = {
+    id: Scalars["ID"]["input"];
+};
+
+export type QueryQuotesArgs = {
+    filter?: QuoteFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<QuoteSort>;
+};
+  
+export type QueryTaskArgs = {
+    id: Scalars["ID"]["input"];
+};
+  
+export type QueryTaskAggregateArgs = {
+    filter?: InputMaybe<TaskAggregateFilter>;
+};
+  
+export type QueryTaskCommentArgs = {
+    id: Scalars["ID"]["input"];
+};
+
+export type QueryTaskCommentsArgs = {
+    filter?: TaskCommentFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<TaskCommentSort>;
+};
+  
+export type QueryTaskStageArgs = {
+    id: Scalars["ID"]["input"];
+};
+  
+export type QueryTaskStageAggregateArgs = {
+    filter?: InputMaybe<TaskStageAggregateFilter>;
+};
+  
+export type QueryTaskStagesArgs = {
+    filter?: TaskStageFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<TaskStageSort>;
+};
+  
+export type QueryTasksArgs = {
+    filter?: TaskFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<TaskSort>;
+};
+  
+export type QueryUserArgs = {
+    id: Scalars["ID"]["input"];
+};
+  
+export type QueryUsersArgs = {
+    filter?: UserFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<UserSort>;
+};
+  
+export type Quote = {
+    company: Company;
+    contact: Contact;
+    createdAt: Scalars["DateTime"]["output"];
+    createdBy: User;
+    description?: Maybe<Scalars["String"]["output"]>;
+    id: Scalars["ID"]["output"];
+    items: Array<QuoteItem>;
+    salesOwner: User;
+    status: QuoteStatus;
+    subTotal: Scalars["Float"]["output"];
+    tax: Scalars["Int"]["output"];
+    title: Scalars["String"]["output"];
+    total: Scalars["Float"]["output"];
+    updatedAt: Scalars["DateTime"]["output"];
+    updatedBy?: Maybe<User>;
+};
+
+export type QuoteConnection = {
+    /** Array of nodes. */
+    nodes: Array<Quote>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type QuoteCreateInput = {
+    companyId: Scalars["ID"]["input"];
+    contactId: Scalars["ID"]["input"];
+    salesOwnerId: Scalars["ID"]["input"];
+    title: Scalars["String"]["input"];
+};
+  
+export type QuoteDeleteFilter = {
+    and?: InputMaybe<Array<QuoteDeleteFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<QuoteDeleteFilter>>;
+    status?: InputMaybe<QuoteStatusFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    total?: InputMaybe<FloatFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type QuoteDeleteResponse = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    description?: Maybe<Scalars["String"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    items?: Maybe<Array<QuoteItem>>;
+    status?: Maybe<QuoteStatus>;
+    subTotal?: Maybe<Scalars["Float"]["output"]>;
+    tax?: Maybe<Scalars["Int"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    total?: Maybe<Scalars["Float"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type QuoteFilter = {
+    and?: InputMaybe<Array<QuoteFilter>>;
+    company?: InputMaybe<QuoteFilterCompanyFilter>;
+    contact?: InputMaybe<QuoteFilterContactFilter>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    createdBy?: InputMaybe<QuoteFilterUserFilter>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<QuoteFilter>>;
+    salesOwner?: InputMaybe<QuoteFilterUserFilter>;
+    status?: InputMaybe<QuoteStatusFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    total?: InputMaybe<FloatFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    updatedBy?: InputMaybe<QuoteFilterUserFilter>;
+};
+
+export type QuoteFilterCompanyFilter = {
+    and?: InputMaybe<Array<QuoteFilterCompanyFilter>>;
+    businessType?: InputMaybe<CompanyBusinessTypeFilterComparison>;
+    companySize?: InputMaybe<CompanyCompanySizeFilterComparison>;
+    country?: InputMaybe<StringFieldComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    industry?: InputMaybe<CompanyIndustryFilterComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<QuoteFilterCompanyFilter>>;
+    totalRevenue?: InputMaybe<IntFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    website?: InputMaybe<StringFieldComparison>;
+};
+  
+export type QuoteFilterContactFilter = {
+    and?: InputMaybe<Array<QuoteFilterContactFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<QuoteFilterContactFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    score?: InputMaybe<IntFieldComparison>;
+    stage?: InputMaybe<ContactStageFilterComparison>;
+    status?: InputMaybe<ContactStatusFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type QuoteFilterUserFilter = {
+    and?: InputMaybe<Array<QuoteFilterUserFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<QuoteFilterUserFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type QuoteItem = {
+    discount: Scalars["Int"]["output"];
+    quantity: Scalars["Int"]["output"];
+    title: Scalars["String"]["output"];
+    totalPrice: Scalars["Float"]["output"];
+    unitPrice: Scalars["Float"]["output"];
+};
+  
+export type QuoteItemInput = {
+    discount: Scalars["Int"]["input"];
+    quantity: Scalars["Int"]["input"];
+    title: Scalars["String"]["input"];
+    unitPrice: Scalars["Float"]["input"];
+};
+
+export type QuoteSort = {
+    direction: SortDirection;
+    field: QuoteSortFields;
+    nulls?: InputMaybe<SortNulls>;
+};
+  
+export type QuoteSortFields =
+    | "createdAt"
+    | "id"
+    | "status"
+    | "title"
+    | "total"
+    | "updatedAt";
+  
+/** Quote status */
+export type QuoteStatus = "ACCEPTED" | "DRAFT" | "SENT";
+  
+export type QuoteStatusFilterComparison = {
+    eq?: InputMaybe<QuoteStatus>;
+    gt?: InputMaybe<QuoteStatus>;
+    gte?: InputMaybe<QuoteStatus>;
+    iLike?: InputMaybe<QuoteStatus>;
+    in?: InputMaybe<Array<QuoteStatus>>;
+    is?: InputMaybe<Scalars["Boolean"]["input"]>;
+    isNot?: InputMaybe<Scalars["Boolean"]["input"]>;
+    like?: InputMaybe<QuoteStatus>;
+    lt?: InputMaybe<QuoteStatus>;
+    lte?: InputMaybe<QuoteStatus>;
+    neq?: InputMaybe<QuoteStatus>;
+    notILike?: InputMaybe<QuoteStatus>;
+    notIn?: InputMaybe<Array<QuoteStatus>>;
+    notLike?: InputMaybe<QuoteStatus>;
+};
+  
+export type QuoteSubscriptionFilter = {
+    and?: InputMaybe<Array<QuoteSubscriptionFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<QuoteSubscriptionFilter>>;
+    status?: InputMaybe<QuoteStatusFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    total?: InputMaybe<FloatFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type QuoteUpdateFilter = {
+    and?: InputMaybe<Array<QuoteUpdateFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<QuoteUpdateFilter>>;
+    status?: InputMaybe<QuoteStatusFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    total?: InputMaybe<FloatFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type QuoteUpdateInput = {
+    companyId?: InputMaybe<Scalars["ID"]["input"]>;
+    contactId?: InputMaybe<Scalars["ID"]["input"]>;
+    description?: InputMaybe<Scalars["String"]["input"]>;
+    items?: InputMaybe<Array<QuoteItemInput>>;
+    salesOwnerId?: InputMaybe<Scalars["ID"]["input"]>;
+    status?: InputMaybe<QuoteStatus>;
+    tax?: InputMaybe<Scalars["Int"]["input"]>;
+    title?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type RegisterInput = {
+    email: Scalars["String"]["input"];
+    password: Scalars["String"]["input"];
+};
+  
+/** Role */
+export type Role = "ADMIN" | "SALES_INTERN" | "SALES_MANAGER" | "SALES_PERSON";
+  
+/** Sort Directions */
+export type SortDirection = "ASC" | "DESC";
+  
+/** Sort Nulls Options */
+export type SortNulls = "NULLS_FIRST" | "NULLS_LAST";
+  
+export type StringFieldComparison = {
+    eq?: InputMaybe<Scalars["String"]["input"]>;
+    gt?: InputMaybe<Scalars["String"]["input"]>;
+    gte?: InputMaybe<Scalars["String"]["input"]>;
+    iLike?: InputMaybe<Scalars["String"]["input"]>;
+    in?: InputMaybe<Array<Scalars["String"]["input"]>>;
+    is?: InputMaybe<Scalars["Boolean"]["input"]>;
+    isNot?: InputMaybe<Scalars["Boolean"]["input"]>;
+    like?: InputMaybe<Scalars["String"]["input"]>;
+    lt?: InputMaybe<Scalars["String"]["input"]>;
+    lte?: InputMaybe<Scalars["String"]["input"]>;
+    neq?: InputMaybe<Scalars["String"]["input"]>;
+    notILike?: InputMaybe<Scalars["String"]["input"]>;
+    notIn?: InputMaybe<Array<Scalars["String"]["input"]>>;
+    notLike?: InputMaybe<Scalars["String"]["input"]>;
+};
+  
+export type Subscription = {
+    createdAudit: Audit;
+    createdCompany: Company;
+    createdCompanyNote: CompanyNote;
+    createdContact: Contact;
+    createdContactNote: ContactNote;
+    createdDeal: Deal;
+    createdDealStage: DealStage;
+    createdEvent: Event;
+    createdEventCategory: EventCategory;
+    createdQuote: Quote;
+    createdTask: Task;
+    createdTaskComment: TaskComment;
+    createdTaskStage: TaskStage;
+    createdUser: User;
+    deletedManyAudits: DeleteManyResponse;
+    deletedManyCompanies: DeleteManyResponse;
+    deletedManyCompanyNotes: DeleteManyResponse;
+    deletedManyContactNotes: DeleteManyResponse;
+    deletedManyContacts: DeleteManyResponse;
+    deletedManyDealStages: DeleteManyResponse;
+    deletedManyDeals: DeleteManyResponse;
+    deletedManyEventCategories: DeleteManyResponse;
+    deletedManyEvents: DeleteManyResponse;
+    deletedManyQuotes: DeleteManyResponse;
+    deletedManyTaskComments: DeleteManyResponse;
+    deletedManyTaskStages: DeleteManyResponse;
+    deletedManyTasks: DeleteManyResponse;
+    deletedManyUsers: DeleteManyResponse;
+    deletedOneAudit: AuditDeleteResponse;
+    deletedOneCompany: CompanyDeleteResponse;
+    deletedOneCompanyNote: CompanyNoteDeleteResponse;
+    deletedOneContact: ContactDeleteResponse;
+    deletedOneContactNote: ContactNoteDeleteResponse;
+    deletedOneDeal: DealDeleteResponse;
+    deletedOneDealStage: DealStageDeleteResponse;
+    deletedOneEvent: EventDeleteResponse;
+    deletedOneEventCategory: EventCategoryDeleteResponse;
+    deletedOneQuote: QuoteDeleteResponse;
+    deletedOneTask: TaskDeleteResponse;
+    deletedOneTaskComment: TaskCommentDeleteResponse;
+    deletedOneTaskStage: TaskStageDeleteResponse;
+    deletedOneUser: UserDeleteResponse;
+    updatedManyAudits: UpdateManyResponse;
+    updatedManyCompanies: UpdateManyResponse;
+    updatedManyCompanyNotes: UpdateManyResponse;
+    updatedManyContactNotes: UpdateManyResponse;
+    updatedManyContacts: UpdateManyResponse;
+    updatedManyDealStages: UpdateManyResponse;
+    updatedManyDeals: UpdateManyResponse;
+    updatedManyEventCategories: UpdateManyResponse;
+    updatedManyEvents: UpdateManyResponse;
+    updatedManyQuotes: UpdateManyResponse;
+    updatedManyTaskComments: UpdateManyResponse;
+    updatedManyTaskStages: UpdateManyResponse;
+    updatedManyTasks: UpdateManyResponse;
+    updatedManyUsers: UpdateManyResponse;
+    updatedOneAudit: Audit;
+    updatedOneCompany: Company;
+    updatedOneCompanyNote: CompanyNote;
+    updatedOneContact: Contact;
+    updatedOneContactNote: ContactNote;
+    updatedOneDeal: Deal;
+    updatedOneDealStage: DealStage;
+    updatedOneEvent: Event;
+    updatedOneEventCategory: EventCategory;
+    updatedOneQuote: Quote;
+    updatedOneTask: Task;
+    updatedOneTaskComment: TaskComment;
+    updatedOneTaskStage: TaskStage;
+    updatedOneUser: User;
+};
+
+export type SubscriptionCreatedAuditArgs = {
+    input?: InputMaybe<CreateAuditSubscriptionFilterInput>;
+};
+  
+export type SubscriptionCreatedCompanyArgs = {
+    input?: InputMaybe<CreateCompanySubscriptionFilterInput>;
+};
+  
+export type SubscriptionCreatedCompanyNoteArgs = {
+    input?: InputMaybe<CreateCompanyNoteSubscriptionFilterInput>;
+};
+  
+export type SubscriptionCreatedContactArgs = {
+    input?: InputMaybe<CreateContactSubscriptionFilterInput>;
+};
+  
+export type SubscriptionCreatedContactNoteArgs = {
+    input?: InputMaybe<CreateContactNoteSubscriptionFilterInput>;
+};
+  
+export type SubscriptionCreatedDealArgs = {
+    input?: InputMaybe<CreateDealSubscriptionFilterInput>;
+};
+  
+export type SubscriptionCreatedDealStageArgs = {
+    input?: InputMaybe<CreateDealStageSubscriptionFilterInput>;
+};
+  
+export type SubscriptionCreatedEventArgs = {
+    input?: InputMaybe<CreateEventSubscriptionFilterInput>;
+};
+  
+export type SubscriptionCreatedEventCategoryArgs = {
+    input?: InputMaybe<CreateEventCategorySubscriptionFilterInput>;
+};
+  
+export type SubscriptionCreatedQuoteArgs = {
+    input?: InputMaybe<CreateQuoteSubscriptionFilterInput>;
+};
+  
+export type SubscriptionCreatedTaskArgs = {
+    input?: InputMaybe<CreateTaskSubscriptionFilterInput>;
+};
+  
+export type SubscriptionCreatedTaskCommentArgs = {
+    input?: InputMaybe<CreateTaskCommentSubscriptionFilterInput>;
+};
+  
+export type SubscriptionCreatedTaskStageArgs = {
+    input?: InputMaybe<CreateTaskStageSubscriptionFilterInput>;
+};
+  
+export type SubscriptionCreatedUserArgs = {
+    input?: InputMaybe<CreateUserSubscriptionFilterInput>;
+};
+  
+export type SubscriptionDeletedOneAuditArgs = {
+    input?: InputMaybe<DeleteOneAuditSubscriptionFilterInput>;
+};
+  
+export type SubscriptionDeletedOneCompanyArgs = {
+    input?: InputMaybe<DeleteOneCompanySubscriptionFilterInput>;
+};
+  
+export type SubscriptionDeletedOneCompanyNoteArgs = {
+    input?: InputMaybe<DeleteOneCompanyNoteSubscriptionFilterInput>;
+};
+  
+export type SubscriptionDeletedOneContactArgs = {
+    input?: InputMaybe<DeleteOneContactSubscriptionFilterInput>;
+};
+  
+export type SubscriptionDeletedOneContactNoteArgs = {
+    input?: InputMaybe<DeleteOneContactNoteSubscriptionFilterInput>;
+};
+  
+export type SubscriptionDeletedOneDealArgs = {
+    input?: InputMaybe<DeleteOneDealSubscriptionFilterInput>;
+};
+  
+export type SubscriptionDeletedOneDealStageArgs = {
+    input?: InputMaybe<DeleteOneDealStageSubscriptionFilterInput>;
+};
+  
+export type SubscriptionDeletedOneEventArgs = {
+    input?: InputMaybe<DeleteOneEventSubscriptionFilterInput>;
+};
+  
+export type SubscriptionDeletedOneEventCategoryArgs = {
+    input?: InputMaybe<DeleteOneEventCategorySubscriptionFilterInput>;
+};
+  
+export type SubscriptionDeletedOneQuoteArgs = {
+    input?: InputMaybe<DeleteOneQuoteSubscriptionFilterInput>;
+};
+  
+export type SubscriptionDeletedOneTaskArgs = {
+    input?: InputMaybe<DeleteOneTaskSubscriptionFilterInput>;
+};
+  
+export type SubscriptionDeletedOneTaskCommentArgs = {
+    input?: InputMaybe<DeleteOneTaskCommentSubscriptionFilterInput>;
+};
+  
+export type SubscriptionDeletedOneTaskStageArgs = {
+    input?: InputMaybe<DeleteOneTaskStageSubscriptionFilterInput>;
+};
+  
+export type SubscriptionDeletedOneUserArgs = {
+    input?: InputMaybe<DeleteOneUserSubscriptionFilterInput>;
+};
+  
+export type SubscriptionUpdatedOneAuditArgs = {
+    input?: InputMaybe<UpdateOneAuditSubscriptionFilterInput>;
+};
+  
+export type SubscriptionUpdatedOneCompanyArgs = {
+    input?: InputMaybe<UpdateOneCompanySubscriptionFilterInput>;
+};
+  
+export type SubscriptionUpdatedOneCompanyNoteArgs = {
+    input?: InputMaybe<UpdateOneCompanyNoteSubscriptionFilterInput>;
+};
+  
+export type SubscriptionUpdatedOneContactArgs = {
+    input?: InputMaybe<UpdateOneContactSubscriptionFilterInput>;
+};
+  
+export type SubscriptionUpdatedOneContactNoteArgs = {
+    input?: InputMaybe<UpdateOneContactNoteSubscriptionFilterInput>;
+};
+  
+export type SubscriptionUpdatedOneDealArgs = {
+    input?: InputMaybe<UpdateOneDealSubscriptionFilterInput>;
+};
+  
+export type SubscriptionUpdatedOneDealStageArgs = {
+    input?: InputMaybe<UpdateOneDealStageSubscriptionFilterInput>;
+};
+  
+export type SubscriptionUpdatedOneEventArgs = {
+    input?: InputMaybe<UpdateOneEventSubscriptionFilterInput>;
+};
+  
+export type SubscriptionUpdatedOneEventCategoryArgs = {
+    input?: InputMaybe<UpdateOneEventCategorySubscriptionFilterInput>;
+};
+  
+export type SubscriptionUpdatedOneQuoteArgs = {
+    input?: InputMaybe<UpdateOneQuoteSubscriptionFilterInput>;
+};
+  
+export type SubscriptionUpdatedOneTaskArgs = {
+    input?: InputMaybe<UpdateOneTaskSubscriptionFilterInput>;
+};
+  
+export type SubscriptionUpdatedOneTaskCommentArgs = {
+    input?: InputMaybe<UpdateOneTaskCommentSubscriptionFilterInput>;
+};
+  
+export type SubscriptionUpdatedOneTaskStageArgs = {
+    input?: InputMaybe<UpdateOneTaskStageSubscriptionFilterInput>;
+};
+  
+export type SubscriptionUpdatedOneUserArgs = {
+    input?: InputMaybe<UpdateOneUserSubscriptionFilterInput>;
+};
+  
+export type Task = {
+    checklist: Array<CheckListItem>;
+    comments: TaskCommentsConnection;
+    commentsAggregate: Array<TaskCommentsAggregateResponse>;
+    completed: Scalars["Boolean"]["output"];
+    createdAt: Scalars["DateTime"]["output"];
+    createdBy: User;
+    description?: Maybe<Scalars["String"]["output"]>;
+    dueDate?: Maybe<Scalars["DateTime"]["output"]>;
+    id: Scalars["ID"]["output"];
+    stage?: Maybe<TaskStage>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title: Scalars["String"]["output"];
+    updatedAt: Scalars["DateTime"]["output"];
+    updatedBy?: Maybe<User>;
+    users: Array<User>;
+    usersAggregate: Array<TaskUsersAggregateResponse>;
+};
+
+export type TaskCommentsArgs = {
+    filter?: TaskCommentFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<TaskCommentSort>;
+};
+  
+export type TaskCommentsAggregateArgs = {
+    filter?: InputMaybe<TaskCommentAggregateFilter>;
+};
+  
+export type TaskUsersArgs = {
+    filter?: UserFilter;
+    sorting?: Array<UserSort>;
+};
+  
+export type TaskUsersAggregateArgs = {
+    filter?: InputMaybe<UserAggregateFilter>;
+};
+  
+export type TaskAggregateFilter = {
+    and?: InputMaybe<Array<TaskAggregateFilter>>;
+    completed?: InputMaybe<BooleanFieldComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    description?: InputMaybe<StringFieldComparison>;
+    dueDate?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskAggregateFilter>>;
+    stageId?: InputMaybe<IdFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type TaskAggregateGroupBy = {
+    completed?: Maybe<Scalars["Boolean"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    description?: Maybe<Scalars["String"]["output"]>;
+    dueDate?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskAggregateGroupByCreatedAtArgs = {
+    by?: GroupBy;
+};
+  
+export type TaskAggregateGroupByDueDateArgs = {
+    by?: GroupBy;
+};
+  
+export type TaskAggregateGroupByUpdatedAtArgs = {
+    by?: GroupBy;
+};
+
+export type TaskAggregateResponse = {
+    avg?: Maybe<TaskAvgAggregate>;
+    count?: Maybe<TaskCountAggregate>;
+    groupBy?: Maybe<TaskAggregateGroupBy>;
+    max?: Maybe<TaskMaxAggregate>;
+    min?: Maybe<TaskMinAggregate>;
+    sum?: Maybe<TaskSumAggregate>;
+};
+  
+export type TaskAvgAggregate = {
+    id?: Maybe<Scalars["Float"]["output"]>;
+    stageId?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type TaskComment = {
+    comment: Scalars["String"]["output"];
+    createdAt: Scalars["DateTime"]["output"];
+    createdBy: User;
+    id: Scalars["ID"]["output"];
+    task: Task;
+    updatedAt: Scalars["DateTime"]["output"];
+    updatedBy?: Maybe<User>;
+};
+  
+export type TaskCommentAggregateFilter = {
+    and?: InputMaybe<Array<TaskCommentAggregateFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskCommentAggregateFilter>>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type TaskCommentConnection = {
+    /** Array of nodes. */
+    nodes: Array<TaskComment>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type TaskCommentCreateInput = {
+    comment: Scalars["String"]["input"];
+    taskId: Scalars["ID"]["input"];
+};
+  
+export type TaskCommentDeleteFilter = {
+    and?: InputMaybe<Array<TaskCommentDeleteFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskCommentDeleteFilter>>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type TaskCommentDeleteResponse = {
+    comment?: Maybe<Scalars["String"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskCommentFilter = {
+    and?: InputMaybe<Array<TaskCommentFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    createdBy?: InputMaybe<TaskCommentFilterUserFilter>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskCommentFilter>>;
+    task?: InputMaybe<TaskCommentFilterTaskFilter>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    updatedBy?: InputMaybe<TaskCommentFilterUserFilter>;
+};
+  
+export type TaskCommentFilterTaskFilter = {
+    and?: InputMaybe<Array<TaskCommentFilterTaskFilter>>;
+    completed?: InputMaybe<BooleanFieldComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    description?: InputMaybe<StringFieldComparison>;
+    dueDate?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskCommentFilterTaskFilter>>;
+    stageId?: InputMaybe<IdFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type TaskCommentFilterUserFilter = {
+    and?: InputMaybe<Array<TaskCommentFilterUserFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<TaskCommentFilterUserFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type TaskCommentSort = {
+    direction: SortDirection;
+    field: TaskCommentSortFields;
+    nulls?: InputMaybe<SortNulls>;
+};
+  
+export type TaskCommentSortFields = "createdAt" | "id" | "updatedAt";
+  
+export type TaskCommentSubscriptionFilter = {
+    and?: InputMaybe<Array<TaskCommentSubscriptionFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskCommentSubscriptionFilter>>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type TaskCommentUpdateFilter = {
+    and?: InputMaybe<Array<TaskCommentUpdateFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskCommentUpdateFilter>>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type TaskCommentUpdateInput = {
+    comment: Scalars["String"]["input"];
+};
+  
+export type TaskCommentsAggregateGroupBy = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskCommentsAggregateResponse = {
+    avg?: Maybe<TaskCommentsAvgAggregate>;
+    count?: Maybe<TaskCommentsCountAggregate>;
+    groupBy?: Maybe<TaskCommentsAggregateGroupBy>;
+    max?: Maybe<TaskCommentsMaxAggregate>;
+    min?: Maybe<TaskCommentsMinAggregate>;
+    sum?: Maybe<TaskCommentsSumAggregate>;
+};
+  
+export type TaskCommentsAvgAggregate = {
+    id?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type TaskCommentsConnection = {
+    /** Array of nodes. */
+    nodes: Array<TaskComment>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type TaskCommentsCountAggregate = {
+    createdAt?: Maybe<Scalars["Int"]["output"]>;
+    id?: Maybe<Scalars["Int"]["output"]>;
+    updatedAt?: Maybe<Scalars["Int"]["output"]>;
+};
+
+export type TaskCommentsMaxAggregate = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskCommentsMinAggregate = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskCommentsSumAggregate = {
+    id?: Maybe<Scalars["Float"]["output"]>;
+};
+
+export type TaskConnection = {
+    /** Array of nodes. */
+    nodes: Array<Task>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type TaskCountAggregate = {
+    completed?: Maybe<Scalars["Int"]["output"]>;
+    createdAt?: Maybe<Scalars["Int"]["output"]>;
+    description?: Maybe<Scalars["Int"]["output"]>;
+    dueDate?: Maybe<Scalars["Int"]["output"]>;
+    id?: Maybe<Scalars["Int"]["output"]>;
+    stageId?: Maybe<Scalars["Int"]["output"]>;
+    title?: Maybe<Scalars["Int"]["output"]>;
+    updatedAt?: Maybe<Scalars["Int"]["output"]>;
+};
+  
+export type TaskCreateInput = {
+    checklist?: InputMaybe<Array<ChecklistItemInput>>;
+    description?: InputMaybe<Scalars["String"]["input"]>;
+    dueDate?: InputMaybe<Scalars["DateTime"]["input"]>;
+    stageId?: InputMaybe<Scalars["Float"]["input"]>;
+    title: Scalars["String"]["input"];
+    userIds?: InputMaybe<Array<Scalars["ID"]["input"]>>;
+};
+  
+export type TaskDeleteFilter = {
+    and?: InputMaybe<Array<TaskDeleteFilter>>;
+    completed?: InputMaybe<BooleanFieldComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    description?: InputMaybe<StringFieldComparison>;
+    dueDate?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskDeleteFilter>>;
+    stageId?: InputMaybe<IdFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type TaskDeleteResponse = {
+    checklist?: Maybe<Array<CheckListItem>>;
+    completed?: Maybe<Scalars["Boolean"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    description?: Maybe<Scalars["String"]["output"]>;
+    dueDate?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskFilter = {
+    and?: InputMaybe<Array<TaskFilter>>;
+    comments?: InputMaybe<TaskFilterTaskCommentFilter>;
+    completed?: InputMaybe<BooleanFieldComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    createdBy?: InputMaybe<TaskFilterUserFilter>;
+    description?: InputMaybe<StringFieldComparison>;
+    dueDate?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskFilter>>;
+    stage?: InputMaybe<TaskFilterTaskStageFilter>;
+    stageId?: InputMaybe<IdFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    updatedBy?: InputMaybe<TaskFilterUserFilter>;
+};
+  
+export type TaskFilterTaskCommentFilter = {
+    and?: InputMaybe<Array<TaskFilterTaskCommentFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskFilterTaskCommentFilter>>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type TaskFilterTaskStageFilter = {
+    and?: InputMaybe<Array<TaskFilterTaskStageFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskFilterTaskStageFilter>>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type TaskFilterUserFilter = {
+    and?: InputMaybe<Array<TaskFilterUserFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<TaskFilterUserFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type TaskMaxAggregate = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    description?: Maybe<Scalars["String"]["output"]>;
+    dueDate?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskMinAggregate = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    description?: Maybe<Scalars["String"]["output"]>;
+    dueDate?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskSort = {
+    direction: SortDirection;
+    field: TaskSortFields;
+    nulls?: InputMaybe<SortNulls>;
+};
+
+export type TaskSortFields =
+  | "completed"
+  | "createdAt"
+  | "description"
+  | "dueDate"
+  | "id"
+  | "stageId"
+  | "title"
+  | "updatedAt";
+
+export type TaskStage = {
+    createdAt: Scalars["DateTime"]["output"];
+    createdBy: User;
+    id: Scalars["ID"]["output"];
+    tasks: Array<Task>;
+    tasksAggregate: Array<TaskStageTasksAggregateResponse>;
+    title: Scalars["String"]["output"];
+    updatedAt: Scalars["DateTime"]["output"];
+    updatedBy?: Maybe<User>;
+};
+
+export type TaskStageTasksArgs = {
+    filter?: TaskFilter;
+    sorting?: Array<TaskSort>;
+};
+  
+export type TaskStageTasksAggregateArgs = {
+    filter?: InputMaybe<TaskAggregateFilter>;
+};
+  
+export type TaskStageAggregateFilter = {
+    and?: InputMaybe<Array<TaskStageAggregateFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskStageAggregateFilter>>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type TaskStageAggregateGroupBy = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskStageAggregateGroupByCreatedAtArgs = {
+    by?: GroupBy;
+};
+  
+export type TaskStageAggregateGroupByUpdatedAtArgs = {
+    by?: GroupBy;
+};
+  
+export type TaskStageAggregateResponse = {
+    avg?: Maybe<TaskStageAvgAggregate>;
+    count?: Maybe<TaskStageCountAggregate>;
+    groupBy?: Maybe<TaskStageAggregateGroupBy>;
+    max?: Maybe<TaskStageMaxAggregate>;
+    min?: Maybe<TaskStageMinAggregate>;
+    sum?: Maybe<TaskStageSumAggregate>;
+};
+  
+export type TaskStageAvgAggregate = {
+    id?: Maybe<Scalars["Float"]["output"]>;
+};
+
+export type TaskStageConnection = {
+    /** Array of nodes. */
+    nodes: Array<TaskStage>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type TaskStageCountAggregate = {
+    createdAt?: Maybe<Scalars["Int"]["output"]>;
+    id?: Maybe<Scalars["Int"]["output"]>;
+    title?: Maybe<Scalars["Int"]["output"]>;
+    updatedAt?: Maybe<Scalars["Int"]["output"]>;
+};
+  
+export type TaskStageCreateInput = {
+    title: Scalars["String"]["input"];
+};
+  
+export type TaskStageDeleteFilter = {
+    and?: InputMaybe<Array<TaskStageDeleteFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskStageDeleteFilter>>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type TaskStageDeleteResponse = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskStageFilter = {
+    and?: InputMaybe<Array<TaskStageFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    createdBy?: InputMaybe<TaskStageFilterUserFilter>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskStageFilter>>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    updatedBy?: InputMaybe<TaskStageFilterUserFilter>;
+};
+  
+export type TaskStageFilterUserFilter = {
+    and?: InputMaybe<Array<TaskStageFilterUserFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<TaskStageFilterUserFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type TaskStageMaxAggregate = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskStageMinAggregate = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskStageSort = {
+    direction: SortDirection;
+    field: TaskStageSortFields;
+    nulls?: InputMaybe<SortNulls>;
+};
+  
+export type TaskStageSortFields = "createdAt" | "id" | "title" | "updatedAt";
+  
+export type TaskStageSubscriptionFilter = {
+    and?: InputMaybe<Array<TaskStageSubscriptionFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskStageSubscriptionFilter>>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type TaskStageSumAggregate = {
+    id?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type TaskStageTasksAggregateGroupBy = {
+    completed?: Maybe<Scalars["Boolean"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    description?: Maybe<Scalars["String"]["output"]>;
+    dueDate?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskStageTasksAggregateResponse = {
+    avg?: Maybe<TaskStageTasksAvgAggregate>;
+    count?: Maybe<TaskStageTasksCountAggregate>;
+    groupBy?: Maybe<TaskStageTasksAggregateGroupBy>;
+    max?: Maybe<TaskStageTasksMaxAggregate>;
+    min?: Maybe<TaskStageTasksMinAggregate>;
+    sum?: Maybe<TaskStageTasksSumAggregate>;
+};
+  
+export type TaskStageTasksAvgAggregate = {
+    id?: Maybe<Scalars["Float"]["output"]>;
+    stageId?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type TaskStageTasksCountAggregate = {
+    completed?: Maybe<Scalars["Int"]["output"]>;
+    createdAt?: Maybe<Scalars["Int"]["output"]>;
+    description?: Maybe<Scalars["Int"]["output"]>;
+    dueDate?: Maybe<Scalars["Int"]["output"]>;
+    id?: Maybe<Scalars["Int"]["output"]>;
+    stageId?: Maybe<Scalars["Int"]["output"]>;
+    title?: Maybe<Scalars["Int"]["output"]>;
+    updatedAt?: Maybe<Scalars["Int"]["output"]>;
+};
+  
+export type TaskStageTasksMaxAggregate = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    description?: Maybe<Scalars["String"]["output"]>;
+    dueDate?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskStageTasksMinAggregate = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    description?: Maybe<Scalars["String"]["output"]>;
+    dueDate?: Maybe<Scalars["DateTime"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    stageId?: Maybe<Scalars["ID"]["output"]>;
+    title?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskStageTasksSumAggregate = {
+    id?: Maybe<Scalars["Float"]["output"]>;
+    stageId?: Maybe<Scalars["Float"]["output"]>;
+};
+
+export type TaskStageUpdateFilter = {
+    and?: InputMaybe<Array<TaskStageUpdateFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskStageUpdateFilter>>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type TaskStageUpdateInput = {
+    title: Scalars["String"]["input"];
+};
+  
+export type TaskSubscriptionFilter = {
+    and?: InputMaybe<Array<TaskSubscriptionFilter>>;
+    completed?: InputMaybe<BooleanFieldComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    description?: InputMaybe<StringFieldComparison>;
+    dueDate?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskSubscriptionFilter>>;
+    stageId?: InputMaybe<IdFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type TaskSumAggregate = {
+    id?: Maybe<Scalars["Float"]["output"]>;
+    stageId?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type TaskUpdateFilter = {
+    and?: InputMaybe<Array<TaskUpdateFilter>>;
+    completed?: InputMaybe<BooleanFieldComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    description?: InputMaybe<StringFieldComparison>;
+    dueDate?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<TaskUpdateFilter>>;
+    stageId?: InputMaybe<IdFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type TaskUpdateInput = {
+    checklist?: InputMaybe<Array<ChecklistItemInput>>;
+    completed?: InputMaybe<Scalars["Boolean"]["input"]>;
+    description?: InputMaybe<Scalars["String"]["input"]>;
+    dueDate?: InputMaybe<Scalars["DateTime"]["input"]>;
+    stageId?: InputMaybe<Scalars["ID"]["input"]>;
+    title?: InputMaybe<Scalars["String"]["input"]>;
+    userIds?: InputMaybe<Array<Scalars["ID"]["input"]>>;
+};
+  
+export type TaskUsersAggregateGroupBy = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    email?: Maybe<Scalars["String"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    jobTitle?: Maybe<Scalars["String"]["output"]>;
+    name?: Maybe<Scalars["String"]["output"]>;
+    phone?: Maybe<Scalars["String"]["output"]>;
+    role?: Maybe<Role>;
+    timezone?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskUsersAggregateResponse = {
+    avg?: Maybe<TaskUsersAvgAggregate>;
+    count?: Maybe<TaskUsersCountAggregate>;
+    groupBy?: Maybe<TaskUsersAggregateGroupBy>;
+    max?: Maybe<TaskUsersMaxAggregate>;
+    min?: Maybe<TaskUsersMinAggregate>;
+    sum?: Maybe<TaskUsersSumAggregate>;
+};
+  
+export type TaskUsersAvgAggregate = {
+    id?: Maybe<Scalars["Float"]["output"]>;
+};
+  
+export type TaskUsersCountAggregate = {
+    createdAt?: Maybe<Scalars["Int"]["output"]>;
+    email?: Maybe<Scalars["Int"]["output"]>;
+    id?: Maybe<Scalars["Int"]["output"]>;
+    jobTitle?: Maybe<Scalars["Int"]["output"]>;
+    name?: Maybe<Scalars["Int"]["output"]>;
+    phone?: Maybe<Scalars["Int"]["output"]>;
+    role?: Maybe<Scalars["Int"]["output"]>;
+    timezone?: Maybe<Scalars["Int"]["output"]>;
+    updatedAt?: Maybe<Scalars["Int"]["output"]>;
+};
+
+export type TaskUsersMaxAggregate = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    email?: Maybe<Scalars["String"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    jobTitle?: Maybe<Scalars["String"]["output"]>;
+    name?: Maybe<Scalars["String"]["output"]>;
+    phone?: Maybe<Scalars["String"]["output"]>;
+    role?: Maybe<Role>;
+    timezone?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskUsersMinAggregate = {
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    email?: Maybe<Scalars["String"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    jobTitle?: Maybe<Scalars["String"]["output"]>;
+    name?: Maybe<Scalars["String"]["output"]>;
+    phone?: Maybe<Scalars["String"]["output"]>;
+    role?: Maybe<Role>;
+    timezone?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type TaskUsersSumAggregate = {
+    id?: Maybe<Scalars["Float"]["output"]>;
+};
+
+export type UpdateManyCompaniesInput = {
+    /** Filter used to find fields to update */
+    filter: CompanyUpdateFilter;
+    /** The update to apply to all records found using the filter */
+    update: CompanyUpdateInput;
+};
+  
+export type UpdateManyCompanyNotesInput = {
+    /** Filter used to find fields to update */
+    filter: CompanyNoteUpdateFilter;
+    /** The update to apply to all records found using the filter */
+    update: CompanyNoteUpdateInput;
+};
+  
+export type UpdateManyContactNotesInput = {
+    /** Filter used to find fields to update */
+    filter: ContactNoteUpdateFilter;
+    /** The update to apply to all records found using the filter */
+    update: ContactNoteUpdateInput;
+};
+  
+export type UpdateManyContactsInput = {
+    /** Filter used to find fields to update */
+    filter: ContactUpdateFilter;
+    /** The update to apply to all records found using the filter */
+    update: ContactUpdateInput;
+};
+
+export type UpdateManyDealStagesInput = {
+    /** Filter used to find fields to update */
+    filter: DealStageUpdateFilter;
+    /** The update to apply to all records found using the filter */
+    update: DealStageUpdateInput;
+};
+  
+export type UpdateManyDealsInput = {
+    /** Filter used to find fields to update */
+    filter: DealUpdateFilter;
+    /** The update to apply to all records found using the filter */
+    update: DealUpdateInput;
+};
+  
+export type UpdateManyEventCategoriesInput = {
+    /** Filter used to find fields to update */
+    filter: EventCategoryUpdateFilter;
+    /** The update to apply to all records found using the filter */
+    update: EventCategoryUpdateInput;
+};
+
+export type UpdateManyEventsInput = {
+    /** Filter used to find fields to update */
+    filter: EventUpdateFilter;
+    /** The update to apply to all records found using the filter */
+    update: EventUpdateInput;
+};
+
+export type UpdateManyQuotesInput = {
+    /** Filter used to find fields to update */
+    filter: QuoteUpdateFilter;
+    /** The update to apply to all records found using the filter */
+    update: QuoteUpdateInput;
+};
+  
+export type UpdateManyResponse = {
+    /** The number of records updated. */
+    updatedCount: Scalars["Int"]["output"];
+};
+
+export type UpdateManyTaskCommentsInput = {
+    /** Filter used to find fields to update */
+    filter: TaskCommentUpdateFilter;
+    /** The update to apply to all records found using the filter */
+    update: TaskCommentUpdateInput;
+};
+  
+export type UpdateManyTaskStagesInput = {
+    /** Filter used to find fields to update */
+    filter: TaskStageUpdateFilter;
+    /** The update to apply to all records found using the filter */
+    update: TaskStageUpdateInput;
+};
+  
+export type UpdateManyTasksInput = {
+    /** Filter used to find fields to update */
+    filter: TaskUpdateFilter;
+    /** The update to apply to all records found using the filter */
+    update: TaskUpdateInput;
+};
+  
+export type UpdateManyUsersInput = {
+    /** Filter used to find fields to update */
+    filter: UserUpdateFilter;
+    /** The update to apply to all records found using the filter */
+    update: UserUpdateInput;
+};
+
+export type UpdateOneAuditSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: AuditSubscriptionFilter;
+};
+  
+export type UpdateOneCompanyInput = {
+    /** The id of the record to update */
+    id: Scalars["ID"]["input"];
+    /** The update to apply. */
+    update: CompanyUpdateInput;
+};
+  
+export type UpdateOneCompanyNoteInput = {
+    /** The id of the record to update */
+    id: Scalars["ID"]["input"];
+    /** The update to apply. */
+    update: CompanyNoteUpdateInput;
+};
+  
+export type UpdateOneCompanyNoteSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: CompanyNoteSubscriptionFilter;
+};
+
+export type UpdateOneCompanySubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: CompanySubscriptionFilter;
+};
+  
+export type UpdateOneContactInput = {
+    /** The id of the record to update */
+    id: Scalars["ID"]["input"];
+    /** The update to apply. */
+    update: ContactUpdateInput;
+};
+  
+export type UpdateOneContactNoteInput = {
+    /** The id of the record to update */
+    id: Scalars["ID"]["input"];
+    /** The update to apply. */
+    update: ContactNoteUpdateInput;
+};
+
+export type UpdateOneContactNoteSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: ContactNoteSubscriptionFilter;
+  };
+  
+export type UpdateOneContactSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: ContactSubscriptionFilter;
+};
+  
+export type UpdateOneDealInput = {
+    /** The id of the record to update */
+    id: Scalars["ID"]["input"];
+    /** The update to apply. */
+    update: DealUpdateInput;
+};
+  
+export type UpdateOneDealStageInput = {
+    /** The id of the record to update */
+    id: Scalars["ID"]["input"];
+    /** The update to apply. */
+    update: DealStageUpdateInput;
+};
+
+export type UpdateOneDealStageSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: DealStageSubscriptionFilter;
+};
+  
+export type UpdateOneDealSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: DealSubscriptionFilter;
+};
+  
+export type UpdateOneEventCategoryInput = {
+    /** The id of the record to update */
+    id: Scalars["ID"]["input"];
+    /** The update to apply. */
+    update: EventCategoryUpdateInput;
+};
+  
+export type UpdateOneEventCategorySubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: EventCategorySubscriptionFilter;
+};
+  
+export type UpdateOneEventInput = {
+    /** The id of the record to update */
+    id: Scalars["ID"]["input"];
+    /** The update to apply. */
+    update: EventUpdateInput;
+};
+  
+export type UpdateOneEventSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: EventSubscriptionFilter;
+};
+  
+export type UpdateOneQuoteInput = {
+    /** The id of the record to update */
+    id: Scalars["ID"]["input"];
+    /** The update to apply. */
+    update: QuoteUpdateInput;
+};
+  
+export type UpdateOneQuoteSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: QuoteSubscriptionFilter;
+};
+  
+export type UpdateOneTaskCommentInput = {
+    /** The id of the record to update */
+    id: Scalars["ID"]["input"];
+    /** The update to apply. */
+    update: TaskCommentUpdateInput;
+};
+
+export type UpdateOneTaskCommentSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: TaskCommentSubscriptionFilter;
+};
+
+export type UpdateOneTaskInput = {
+    /** The id of the record to update */
+    id: Scalars["ID"]["input"];
+    /** The update to apply. */
+    update: TaskUpdateInput;
+};
+  
+export type UpdateOneTaskStageInput = {
+    /** The id of the record to update */
+    id: Scalars["ID"]["input"];
+    /** The update to apply. */
+    update: TaskStageUpdateInput;
+};
+  
+export type UpdateOneTaskStageSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: TaskStageSubscriptionFilter;
+};
+  
+export type UpdateOneTaskSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: TaskSubscriptionFilter;
+};
+  
+export type UpdateOneUserInput = {
+    /** The id of the record to update */
+    id: Scalars["ID"]["input"];
+    /** The update to apply. */
+    update: UserUpdateInput;
+};
+  
+export type UpdateOneUserSubscriptionFilterInput = {
+    /** Specify to filter the records returned. */
+    filter: UserSubscriptionFilter;
+};
+
+export type User = {
+    avatarUrl?: Maybe<Scalars["String"]["output"]>;
+    companies: UserCompaniesConnection;
+    contacts: UserContactsConnection;
+    createdAt: Scalars["DateTime"]["output"];
+    createdBy?: Maybe<User>;
+    deals: UserDealsConnection;
+    email: Scalars["String"]["output"];
+    events: UserEventsConnection;
+    id: Scalars["ID"]["output"];
+    jobTitle?: Maybe<Scalars["String"]["output"]>;
+    name: Scalars["String"]["output"];
+    phone?: Maybe<Scalars["String"]["output"]>;
+    role: Role;
+    tasks: UserTasksConnection;
+    timezone?: Maybe<Scalars["String"]["output"]>;
+    updatedAt: Scalars["DateTime"]["output"];
+    updatedBy?: Maybe<User>;
+};
+
+export type UserCompaniesArgs = {
+    filter?: CompanyFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<CompanySort>;
+};
+  
+export type UserContactsArgs = {
+    filter?: ContactFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<ContactSort>;
+};
+  
+export type UserDealsArgs = {
+    filter?: DealFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<DealSort>;
+};
+
+export type UserEventsArgs = {
+    filter?: EventFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<EventSort>;
+};
+  
+export type UserTasksArgs = {
+    filter?: TaskFilter;
+    paging?: OffsetPaging;
+    sorting?: Array<TaskSort>;
+};
+
+export type UserAggregateFilter = {
+    and?: InputMaybe<Array<UserAggregateFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<UserAggregateFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type UserCompaniesConnection = {
+    /** Array of nodes. */
+    nodes: Array<Company>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type UserConnection = {
+    /** Array of nodes. */
+    nodes: Array<User>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+
+export type UserContactsConnection = {
+    /** Array of nodes. */
+    nodes: Array<Contact>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type UserCreateInput = {
+    email: Scalars["String"]["input"];
+    jobTitle: Scalars["String"]["input"];
+    name: Scalars["String"]["input"];
+    phone: Scalars["String"]["input"];
+    role: Role;
+    timezone: Scalars["String"]["input"];
+};
+
+export type UserDealsConnection = {
+    /** Array of nodes. */
+    nodes: Array<Deal>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type UserDeleteFilter = {
+    and?: InputMaybe<Array<UserDeleteFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<UserDeleteFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type UserDeleteResponse = {
+    avatarUrl?: Maybe<Scalars["String"]["output"]>;
+    createdAt?: Maybe<Scalars["DateTime"]["output"]>;
+    email?: Maybe<Scalars["String"]["output"]>;
+    id?: Maybe<Scalars["ID"]["output"]>;
+    jobTitle?: Maybe<Scalars["String"]["output"]>;
+    name?: Maybe<Scalars["String"]["output"]>;
+    phone?: Maybe<Scalars["String"]["output"]>;
+    role?: Maybe<Role>;
+    timezone?: Maybe<Scalars["String"]["output"]>;
+    updatedAt?: Maybe<Scalars["DateTime"]["output"]>;
+};
+  
+export type UserEventsConnection = {
+    /** Array of nodes. */
+    nodes: Array<Event>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type UserFilter = {
+    and?: InputMaybe<Array<UserFilter>>;
+    companies?: InputMaybe<UserFilterCompanyFilter>;
+    contacts?: InputMaybe<UserFilterContactFilter>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    createdBy?: InputMaybe<UserFilterUserFilter>;
+    deals?: InputMaybe<UserFilterDealFilter>;
+    email?: InputMaybe<StringFieldComparison>;
+    events?: InputMaybe<UserFilterEventFilter>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<UserFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    tasks?: InputMaybe<UserFilterTaskFilter>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    updatedBy?: InputMaybe<UserFilterUserFilter>;
+};
+
+export type UserFilterCompanyFilter = {
+    and?: InputMaybe<Array<UserFilterCompanyFilter>>;
+    businessType?: InputMaybe<CompanyBusinessTypeFilterComparison>;
+    companySize?: InputMaybe<CompanyCompanySizeFilterComparison>;
+    country?: InputMaybe<StringFieldComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    industry?: InputMaybe<CompanyIndustryFilterComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<UserFilterCompanyFilter>>;
+    totalRevenue?: InputMaybe<IntFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    website?: InputMaybe<StringFieldComparison>;
+};
+
+export type UserFilterContactFilter = {
+    and?: InputMaybe<Array<UserFilterContactFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<UserFilterContactFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    score?: InputMaybe<IntFieldComparison>;
+    stage?: InputMaybe<ContactStageFilterComparison>;
+    status?: InputMaybe<ContactStatusFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type UserFilterDealFilter = {
+    and?: InputMaybe<Array<UserFilterDealFilter>>;
+    closeDateDay?: InputMaybe<IntFieldComparison>;
+    closeDateMonth?: InputMaybe<IntFieldComparison>;
+    closeDateYear?: InputMaybe<IntFieldComparison>;
+    companyId?: InputMaybe<IdFilterComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    dealOwnerId?: InputMaybe<IdFilterComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<UserFilterDealFilter>>;
+    stageId?: InputMaybe<IdFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+    value?: InputMaybe<FloatFieldComparison>;
+};
+
+export type UserFilterEventFilter = {
+    and?: InputMaybe<Array<UserFilterEventFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    description?: InputMaybe<StringFieldComparison>;
+    endDate?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<UserFilterEventFilter>>;
+    startDate?: InputMaybe<DateFieldComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type UserFilterTaskFilter = {
+    and?: InputMaybe<Array<UserFilterTaskFilter>>;
+    completed?: InputMaybe<BooleanFieldComparison>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    description?: InputMaybe<StringFieldComparison>;
+    dueDate?: InputMaybe<DateFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    or?: InputMaybe<Array<UserFilterTaskFilter>>;
+    stageId?: InputMaybe<IdFilterComparison>;
+    title?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type UserFilterUserFilter = {
+    and?: InputMaybe<Array<UserFilterUserFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<UserFilterUserFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type UserRoleFilterComparison = {
+    eq?: InputMaybe<Role>;
+    in?: InputMaybe<Array<Role>>;
+    neq?: InputMaybe<Role>;
+    notIn?: InputMaybe<Array<Role>>;
+};
+
+export type UserSort = {
+    direction: SortDirection;
+    field: UserSortFields;
+    nulls?: InputMaybe<SortNulls>;
+};
+
+export type UserSortFields =
+  | "createdAt"
+  | "email"
+  | "id"
+  | "jobTitle"
+  | "name"
+  | "phone"
+  | "role"
+  | "timezone"
+  | "updatedAt";
+
+export type UserSubscriptionFilter = {
+    and?: InputMaybe<Array<UserSubscriptionFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<UserSubscriptionFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+
+export type UserTasksConnection = {
+    /** Array of nodes. */
+    nodes: Array<Task>;
+    /** Paging information */
+    pageInfo: OffsetPageInfo;
+    /** Fetch total count of records */
+    totalCount: Scalars["Int"]["output"];
+};
+  
+export type UserUpdateFilter = {
+    and?: InputMaybe<Array<UserUpdateFilter>>;
+    createdAt?: InputMaybe<DateFieldComparison>;
+    email?: InputMaybe<StringFieldComparison>;
+    id?: InputMaybe<IdFilterComparison>;
+    jobTitle?: InputMaybe<StringFieldComparison>;
+    name?: InputMaybe<StringFieldComparison>;
+    or?: InputMaybe<Array<UserUpdateFilter>>;
+    phone?: InputMaybe<StringFieldComparison>;
+    role?: InputMaybe<UserRoleFilterComparison>;
+    timezone?: InputMaybe<StringFieldComparison>;
+    updatedAt?: InputMaybe<DateFieldComparison>;
+};
+  
+export type UserUpdateInput = {
+    email?: InputMaybe<Scalars["String"]["input"]>;
+    jobTitle?: InputMaybe<Scalars["String"]["input"]>;
+    name?: InputMaybe<Scalars["String"]["input"]>;
+    phone?: InputMaybe<Scalars["String"]["input"]>;
+    role?: InputMaybe<Role>;
+    timezone?: InputMaybe<Scalars["String"]["input"]>;
 };
