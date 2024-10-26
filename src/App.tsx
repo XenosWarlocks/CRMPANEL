@@ -21,8 +21,8 @@ import routerBindings, {
 import { App as AntdApp } from "antd";
 import { createClient } from "graphql-ws";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
-import { authProvider } from "./authProvider";
-import { Header } from "./components/header";
+
+import { Header } from "./components/layout/header";
 import { ColorModeContextProvider } from "./contexts/color-mode";
 import {
   BlogPostCreate,
@@ -30,15 +30,19 @@ import {
   BlogPostList,
   BlogPostShow,
 } from "./pages/blog-posts";
+
+import { Home, ForgotPassword, Register, Login } from "./pages";
 import {
   CategoryCreate,
   CategoryEdit,
   CategoryList,
   CategoryShow,
 } from "./pages/categories";
-import { ForgotPassword } from "./pages/forgotPassword";
-import { Login } from "./pages/login";
-import { Register } from "./pages/register";
+// import { ForgotPassword } from "./pages/forgotPassword";
+// import { Login } from "./pages/login";
+// import { Register } from "./pages/register";
+import { authProvider } from './providers/auth';
+import { register } from "module";
 
 const API_URL = "https://api.nestjs-query.refine.dev/graphql";
 const WS_URL = "wss://api.nestjs-query.refine.dev/graphql";
@@ -94,22 +98,19 @@ function App() {
                   <Route
                     element={
                       <Authenticated
-                        key="authenticated-inner"
+                        key="authenticated-layout"
                         fallback={<CatchAllNavigate to="/login" />}
                       >
-                        <ThemedLayoutV2
-                          Header={Header}
-                          Sider={(props) => <ThemedSiderV2 {...props} fixed />}
-                        >
-                          <Outlet />
-                        </ThemedLayoutV2>
+                      {/* <Layout>
+                        <Outlet />
+                      </Layout> */}
                       </Authenticated>
                     }
                   >
-                    <Route
-                      index
-                      element={<NavigateToResource resource="blog_posts" />}
-                    />
+                    {/* <Route index element={< DashBoardPage />} /> */}
+
+                    <Route index element={<NavigateToResource resource="blog_posts" />}/>
+                    <Route index element={<Home />}/>
                     <Route path="/blog-posts">
                       <Route index element={<BlogPostList />} />
                       <Route path="create" element={<BlogPostCreate />} />
@@ -134,12 +135,11 @@ function App() {
                       </Authenticated>
                     }
                   >
-                    <Route path="/login" element={<Login />} />
+                    {/* <Route index element={<WelcomePage />} /> */}
+                    <Route index element={<Home />} />
                     <Route path="/register" element={<Register />} />
-                    <Route
-                      path="/forgot-password"
-                      element={<ForgotPassword />}
-                    />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/forgot-password" element={<ForgotPassword />}/>
                   </Route>
                 </Routes>
 
