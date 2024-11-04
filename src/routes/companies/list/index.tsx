@@ -1,21 +1,23 @@
-import { useModalForm, useSelect } from "@refinedev/antd";
-import { type HttpError, useGo } from "@refinedev/core";
+import React from "react";
+import {
+    CreateButton,
+    DeleteButton,
+    EditButton,
+    FilterDropdown,
+    List,
+    useTable,
+} from "@refinedev/antd";
 
-import type {
-    GetFields,
-    GetFieldsFromList,
-    GetVariables,
-} from "@refinedev/nestjs-query";
+import { getDefaultFilter, type HttpError, useGo } from "@refinedev/core";
+import type { GetFieldsFromList } from "@refinedev/nestjs-query";
 
-import { Form, Input, Modal, Select } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
+import { Input, Space, Table } from "antd";
 
-import { SelectOptionWithAvatar } from "@/components";
-import { USERS_SELECT_QUERY } from "@/graphql/queries";
+import { CustomAvatar, PaginationTotal, Text } from "@/components";
+import type { CompaniesListQuery } from "@/graphql/types";
+import { currencyNumber } from "@/utilities";
 
-import type {
-    CreateCompanyMutation,
-    CreateCompanyMutationVariables,
-    UsersSelectQuery,
-} from "@/graphql/types";
+import { COMPANIES_LIST_QUERY } from "./queries";
 
-import { CREATE_COMPANY_MUTATION } from "./queries";
+type Company = GetFieldsFromList<CompaniesListQuery>;
